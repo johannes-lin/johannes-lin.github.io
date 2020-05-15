@@ -16,7 +16,7 @@
 <meta property="og:description" content="DOM: Document Object Model(文档对象模型)1. 渲染顺序：代码上由上到下。html（generate DOM tree-&gt;css-&gt;渲染树-&gt;绘制完成1、浏览器解析html源码，然后创建一个DOM树。在DOM树中，每一个HTML标签都有一个对应的节点(元素节点),并且每一个文本也都有一个对应的节点(文本节点)。DOM树的根节点就是documentElem">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-05-15T16:12:21.000Z">
-<meta property="article:modified_time" content="2020-05-15T16:18:36.530Z">
+<meta property="article:modified_time" content="2020-05-15T16:23:34.343Z">
 <meta property="article:author" content="Johannes">
 <meta name="twitter:card" content="summary">
   
@@ -163,10 +163,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="DOM-Document-Object-Model-文档对象模型"><a href="#DOM-Document-Object-Model-文档对象模型" class="headerlink" title="DOM: Document Object Model(文档对象模型)"></a>DOM: Document Object Model(文档对象模型)</h1><h2 id="1-渲染顺序：代码上由上到下。html（generate-DOM-tree-gt-css-gt-渲染树-gt-绘制完成"><a href="#1-渲染顺序：代码上由上到下。html（generate-DOM-tree-gt-css-gt-渲染树-gt-绘制完成" class="headerlink" title="1. 渲染顺序：代码上由上到下。html（generate DOM tree-&gt;css-&gt;渲染树-&gt;绘制完成"></a>1. 渲染顺序：代码上由上到下。html（generate DOM tree-&gt;css-&gt;渲染树-&gt;绘制完成</h2><h3 id="1、浏览器解析html源码，然后创建一个DOM树。"><a href="#1、浏览器解析html源码，然后创建一个DOM树。" class="headerlink" title="1、浏览器解析html源码，然后创建一个DOM树。"></a>1、浏览器解析html源码，然后创建一个DOM树。</h3><p>在DOM树中，每一个HTML标签都有一个对应的节点(元素节点),并且每一个文本也都有一个对应的节点(文本节点)。DOM树的根节点就是documentElement，对应的是html标签。</p>
-<p>###　　 2、浏览器解析CSS代码，计算出最终的样式数据。<br>对CSS代码中非法的语法它会直接忽略掉。解析CSS的时候会按照如下顺序来定义优先级：浏览器默认设置，用户设置，外联样式，内联样式，html中的style(嵌在标签中的行间样式)。</p>
-<p>###　　3、创建完DOM树并得到最终的样式数据之后，构建一个渲染树。<br>渲染树和DOM树有点像，但是有区别。DOM树完全和html标签一一对应，而渲染树会忽略不需要渲染的元素(head、display:none的元素)。渲染树中每一个节点都存储着对应的CSS属性。</p>
-<p>###　　4、当渲染树创建完成之后，浏览器就可以根据渲染树直接把页面绘制到屏幕上。</p>
+        <h1 id="DOM-Document-Object-Model-文档对象模型"><a href="#DOM-Document-Object-Model-文档对象模型" class="headerlink" title="DOM: Document Object Model(文档对象模型)"></a>DOM: Document Object Model(文档对象模型)</h1><h2 id="1-渲染顺序：代码上由上到下。html（generate-DOM-tree-gt-css-gt-渲染树-gt-绘制完成"><a href="#1-渲染顺序：代码上由上到下。html（generate-DOM-tree-gt-css-gt-渲染树-gt-绘制完成" class="headerlink" title="1. 渲染顺序：代码上由上到下。html（generate DOM tree-&gt;css-&gt;渲染树-&gt;绘制完成"></a>1. 渲染顺序：代码上由上到下。html（generate DOM tree-&gt;css-&gt;渲染树-&gt;绘制完成</h2><p>1、浏览器解析html源码，然后创建一个DOM树。<br>在DOM树中，每一个HTML标签都有一个对应的节点(元素节点),并且每一个文本也都有一个对应的节点(文本节点)。DOM树的根节点就是documentElement，对应的是html标签。</p>
+<p>2、浏览器解析CSS代码，计算出最终的样式数据。<br>对CSS代码中非法的语法它会直接忽略掉。解析CSS的时候会按照如下顺序来定义优先级：浏览器默认设置，用户设置，外联样式，内联样式，html中的style(嵌在标签中的行间样式)。</p>
+<p>3、创建完DOM树并得到最终的样式数据之后，构建一个渲染树。<br>渲染树和DOM树有点像，但是有区别。DOM树完全和html标签一一对应，而渲染树会忽略不需要渲染的元素(head、display:none的元素)。渲染树中每一个节点都存储着对应的CSS属性。</p>
+<p>4、当渲染树创建完成之后，浏览器就可以根据渲染树直接把页面绘制到屏幕上。</p>
 
       
 
