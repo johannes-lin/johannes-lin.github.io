@@ -16,8 +16,9 @@
 <meta property="og:description" content="hw_1CONCEPTS1. ROC(Receiver Operating Characteristic)All the concepts are pasted from Wikipedia for ROC, and I have no understanding in the procession. But I of course will turn back and learn it agai">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://yoursite.com/img/roc_outcomes_pic.png">
+<meta property="og:image" content="http://yoursite.com/img/roc-curve-v2.png">
 <meta property="article:published_time" content="2020-07-06T14:13:06.000Z">
-<meta property="article:modified_time" content="2020-07-06T14:30:47.530Z">
+<meta property="article:modified_time" content="2020-07-06T15:03:54.807Z">
 <meta property="article:author" content="Johannes">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://yoursite.com/img/roc_outcomes_pic.png">
@@ -170,7 +171,9 @@
 <p>And when the result of signal detection (or variable measurement) is a continuous value, the boundary between classes must be defined by a threshold.</p>
 <p>To get an appropriate example in a real-world problem, consider a diagnostic test that seeks to determine whether a person has a certain disease. A false positive in this case occurs when the person tests positive, but does not actually have the disease. A false negative, on the other hand, occurs when the person tests negative, suggesting they are healthy, when they actually do have the disease. </p>
 <p>Let us define an experiment from <strong>P</strong> positive instances and <strong>N</strong> negative instances for some condition. The four outcomes can be formulated in a 2×2 <em>contingency table</em> or <em>confusion matrix</em>, as follows: </p>
-<p><img src="/img/roc_outcomes_pic.png" alt="outcomes pic"></p>
+<p><img src="/img/roc_outcomes_pic.png" alt="outcomes_pic"></p>
+<h6 id="2-AUROC-AREA-UNDER-ROC"><a href="#2-AUROC-AREA-UNDER-ROC" class="headerlink" title="2. AUROC (AREA UNDER ROC)"></a><em>2. AUROC (AREA UNDER ROC)</em></h6><p>As following, an AUROC of 0.8 means that the model has good discriminatory ability </p>
+<p><img src="/img/roc-curve-v2.png" alt="roc_pic-curve"></p>
 
       
 
