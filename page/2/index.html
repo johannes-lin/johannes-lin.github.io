@@ -141,6 +141,160 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Interview-Questions-JS-TS" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/05/15/Interview-Questions-JS-TS/">Interview Questions--JS(TS)</a>
+    </h1>
+  
+
+        
+        <a href="/2020/05/15/Interview-Questions-JS-TS/" class="archive-article-date">
+  	<time datetime="2020-05-15T15:42:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-15</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="1-this-this-foo"><a href="#1-this-this-foo" class="headerlink" title="1. this(this.foo)"></a>1. this(this.foo)</h2><h3 id="一、全局中的this"><a href="#一、全局中的this" class="headerlink" title="一、全局中的this"></a>一、全局中的this</h3><p>无论是否在严格模式下，在全局执行环境中（在任何函数体外部）this 都指向全局对象。</p>
+<p>// 在浏览器中, window 对象同时也是全局对象：console.log(this === window); // true</p>
+<h3 id="二、常规函数中的this"><a href="#二、常规函数中的this" class="headerlink" title="二、常规函数中的this"></a>二、常规函数中的this</h3><p>摘要：<br>1.在一般函数方法中使用 this 指代全局对象<br>2.作为<a href="https://www.w3school.com.cn/js/js_object_methods.asp" target="_blank" rel="noopener">对象方法</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var person &#x3D; &#123;</span><br><span class="line">  firstName: &quot;Bill&quot;,</span><br><span class="line">  lastName : &quot;Gates&quot;,</span><br><span class="line">  id       : 648,</span><br><span class="line">  fullName : function() &#123;</span><br><span class="line">    return this.firstName + &quot; &quot; + this.lastName;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>调用，this 指代上级对象<br>3.作为<a href="https://blog.csdn.net/weixin_41796631/article/details/82939585" target="_blank" rel="noopener">构造函数（为对象成员变量赋初始值）</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">function Person(name,job,age)</span><br><span class="line">&#123;</span><br><span class="line">     this.name&#x3D;name;</span><br><span class="line">     this.job&#x3D;job;</span><br><span class="line">     this.age&#x3D;age;</span><br><span class="line">     this.sayHi&#x3D;function()&#x2F;&#x2F;对象有自己的属性</span><br><span class="line">         &#123;</span><br><span class="line">          alert(&quot;Hi&quot;)</span><br><span class="line">         &#125;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+<p>调用，this 指代new 出的对象<br>4.apply 调用 ，apply方法作用是改变函数的调用对象，此方法的第一个参数为改变后调用这个函数的对象，this指代第一个参数<br><a href="https://www.cnblogs.com/pabitel/p/5922511.html" target="_blank" rel="noopener">阅读全文</a>: <a href="https://www.cnblogs.com/pabitel/p/5922511.html" target="_blank" rel="noopener">https://www.cnblogs.com/pabitel/p/5922511.html</a></p>
+<h4 id="1-纯粹的函数调用"><a href="#1-纯粹的函数调用" class="headerlink" title="1.纯粹的函数调用"></a>1.纯粹的函数调用</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;----------------------------example1-------------------------------</span><br><span class="line">&#x2F;&#x2F; 非严格模式下</span><br><span class="line">function f1()&#123;</span><br><span class="line">    return this;</span><br><span class="line">&#125;</span><br><span class="line">&#x2F;&#x2F;在浏览器中：</span><br><span class="line">f1() &#x3D;&#x3D;&#x3D; window;   &#x2F;&#x2F;在浏览器中，全局对象是window</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;在Node中：</span><br><span class="line">f1() &#x3D;&#x3D;&#x3D; global; &#x2F;&#x2F; true</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;----------------------------example2-------------------------------</span><br><span class="line">&#x2F;&#x2F; 严格模式下</span><br><span class="line">function f2()&#123;</span><br><span class="line">    &quot;use strict&quot;; &#x2F;&#x2F; 这里是严格模式</span><br><span class="line">    return this;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">f2() &#x3D;&#x3D;&#x3D; undefined; &#x2F;&#x2F; true 此处的this为undefined是因为f2是直接被调用的，而不是作为某个对象的方法（如 window.f2()）被调用。</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;----------------------------example3-------------------------------</span><br><span class="line">&#x2F;&#x2F; 将一个对象作为call和apply的第一个参数，this会被绑定到这个对象。</span><br><span class="line">var obj &#x3D; &#123;a: &#39;Custom&#39;&#125;;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 这个属性是在global对象定义的。</span><br><span class="line">var a &#x3D; &#39;Global&#39;;</span><br><span class="line"></span><br><span class="line">function whatsThis(arg) &#123;</span><br><span class="line">    return this.a;  &#x2F;&#x2F; this的值取决于函数的调用方式</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">whatsThis();          &#x2F;&#x2F; 写法1，严格模式为undefined，非严格模式为&#39;Global&#39;</span><br><span class="line">whatsThis.call(undefined); &#x2F;&#x2F; 写法2，严格模式为undefined，非严格模式为&#39;Global&#39;</span><br><span class="line">whatsThis.call(obj);  &#x2F;&#x2F; 可指定this，&#39;Custom&#39;</span><br><span class="line">whatsThis.apply(obj); &#x2F;&#x2F; 可指定this，&#39;Custom&#39;</span><br><span class="line">whatsThis.bind(obj)(); &#x2F;&#x2F; 可绑定this，&#39;Custom&#39;</span><br><span class="line">whatsThis.bind(obj).bind(&#123;a: &#39;aHhha&#39;&#125;)(); &#x2F;&#x2F; this只可绑定一次，&#39;Custom&#39;</span><br></pre></td></tr></table></figure>
+<p>上面的写法1和写法2是等价的，写法1是写法2 的语法糖。</p>
+<p>写法2中call方法接收的第一个参数就是this，这里传了一个undefined，此时有如下定义：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">如果你传的 context 是 null 或者 undefined，那么非严格模式下， window 对象（浏览器）或global（Node）就是默认的 context，严格模式下默认 context是 undefined。</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-对象中的函数的this"><a href="#2-对象中的函数的this" class="headerlink" title="2.对象中的函数的this"></a>2.对象中的函数的this</h4><p>当函数作为对象里的方法被调用时，它们的 this 是调用该函数的对象。最靠近的引用优先级最高。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">var o &#x3D; &#123;prop: 37&#125;;</span><br><span class="line"></span><br><span class="line">function independent() &#123;</span><br><span class="line">  return this.prop;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">o.f &#x3D; independent;</span><br><span class="line"></span><br><span class="line">console.log(o.f()); &#x2F;&#x2F; logs 37， 函数调用关系为从o的f成员调用</span><br><span class="line"></span><br><span class="line">o.b &#x3D; &#123;g: independent, prop: 42&#125;;</span><br><span class="line">console.log(o.b.g()); &#x2F;&#x2F; 42 最靠近的引用优先级最高</span><br><span class="line">console.log(o.f.call(&#123;prop: 53&#125;));  &#x2F;&#x2F; 使用call可改变this</span><br></pre></td></tr></table></figure>
+<h4 id="3-构造函数中的this"><a href="#3-构造函数中的this" class="headerlink" title="3.构造函数中的this"></a>3.构造函数中的this</h4><p>当函数作为构造函数被new返回一个对象时，该对象即为this。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">function C()&#123;</span><br><span class="line">  this.a &#x3D; 37;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var o &#x3D; new C();</span><br><span class="line">console.log(o.a); &#x2F;&#x2F; logs 37</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">function C2()&#123;</span><br><span class="line">  this.a &#x3D; 37;</span><br><span class="line">  return &#123;a:38&#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">o &#x3D; new C2();</span><br><span class="line">console.log(o.a); &#x2F;&#x2F; logs 38</span><br></pre></td></tr></table></figure>
+
+<h4 id="4-作为DOM元素的监听处理函数的this"><a href="#4-作为DOM元素的监听处理函数的this" class="headerlink" title="4.作为DOM元素的监听处理函数的this"></a>4.作为DOM元素的监听处理函数的this</h4><p>当函数被作为DOM元素的监听处理函数时，它的this指向监听器所在的DOM元素，但只有最外层代码中的this是这样的：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;button onclick&#x3D;&quot;alert(this.tagName.toLowerCase());&quot;&gt;  &lt;!-- button --&gt;</span><br><span class="line">  Show this</span><br><span class="line">&lt;&#x2F;button&gt;</span><br><span class="line">&lt;button onclick&#x3D;&quot;alert((function()&#123;return this&#125;)());&quot;&gt;  &lt;!-- 非严格模式下指向global&#x2F;window --&gt;</span><br><span class="line">  Show inner this</span><br><span class="line">&lt;&#x2F;button&gt;</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="三、箭头函数的this"><a href="#三、箭头函数的this" class="headerlink" title="三、箭头函数的this"></a>三、箭头函数的this</h3><h4 id="1-箭头函数不会创建自己的this-它只会从自己的作用域链的上一层继承this。"><a href="#1-箭头函数不会创建自己的this-它只会从自己的作用域链的上一层继承this。" class="headerlink" title="1.箭头函数不会创建自己的this,它只会从自己的作用域链的上一层继承this。"></a>1.箭头函数不会创建自己的this,它只会从自己的作用域链的上一层继承this。</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">function Person() &#123;</span><br><span class="line">  &#x2F;&#x2F; Person() 构造函数定义 &#96;this&#96;作为它自己的实例.</span><br><span class="line">  this.age &#x3D; 0;</span><br><span class="line"></span><br><span class="line">  setInterval(function growUp() &#123;</span><br><span class="line">    &#x2F;&#x2F; 在非严格模式, growUp()函数定义 &#96;this&#96;作为全局对象, </span><br><span class="line">    &#x2F;&#x2F; 与在 Person()构造函数中定义的 &#96;this&#96;并不相同.</span><br><span class="line">    this.age++;</span><br><span class="line">    console.log(this.age) &#x2F;&#x2F;NAN</span><br><span class="line">  &#125;, 1000);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var p &#x3D; new Person();</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">function Person()&#123;</span><br><span class="line">  this.age &#x3D; 0;</span><br><span class="line"></span><br><span class="line">  setInterval(() &#x3D;&gt; &#123;</span><br><span class="line">    this.age++; &#x2F;&#x2F; |this| 正确地指向 p 实例，继承作用域链 箭头函数&#x3D;&gt;Person</span><br><span class="line">  &#125;, 1000);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var p &#x3D; new Person();</span><br></pre></td></tr></table></figure>
+<h4 id="2-箭头函数不能用call-指定this"><a href="#2-箭头函数不能用call-指定this" class="headerlink" title="2.箭头函数不能用call()指定this"></a>2.箭头函数不能用call()指定this</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">const obj &#x3D; &#123;</span><br><span class="line">    a: () &#x3D;&gt; &#123;</span><br><span class="line">        console.log(this)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">obj.a.call(&#39;123&#39;)  &#x2F;&#x2F;window，继承作用域链 箭头函数&#x3D;&gt;window</span><br></pre></td></tr></table></figure>
+<h4 id="3-箭头函数不能用bind-指定this"><a href="#3-箭头函数不能用bind-指定this" class="headerlink" title="3.箭头函数不能用bind()指定this"></a>3.箭头函数不能用bind()指定this</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var globalObject &#x3D; this;</span><br><span class="line">var foo &#x3D; (() &#x3D;&gt; this);</span><br><span class="line">var obj &#x3D; &#123;foo: foo&#125;;</span><br><span class="line">foo &#x3D; foo.bind(obj);</span><br><span class="line">console.log(foo() &#x3D;&#x3D;&#x3D; globalObject); &#x2F;&#x2F; true</span><br></pre></td></tr></table></figure>
+
+<h3 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">总结：箭头函数中，有以下总结：</span><br><span class="line"></span><br><span class="line">箭头函数不会创建自己的this,它只会从自己的作用域链的上一层继承this；箭头函数不能用call()或bind()指定this。</span><br></pre></td></tr></table></figure>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/05/15/Interview-Questions-JS-TS/">show all >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Interview-Questions-CSS" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/05/15/Interview-Questions-CSS/">Interview Questions--CSS</a>
+    </h1>
+  
+
+        
+        <a href="/2020/05/15/Interview-Questions-CSS/" class="archive-article-date">
+  	<time datetime="2020-05-15T15:40:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-15</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1-columns"><a href="#1-columns" class="headerlink" title="1.columns:"></a>1.columns:</h3><p>横轴上排开：<br>|||||||</p>
+<h3 id="2-rows："><a href="#2-rows：" class="headerlink" title="2. rows："></a>2. rows：</h3><p>纵轴上排开：<br>——<br>——<br>——</p>
+<h3 id="3-CSS垂直居中的方法："><a href="#3-CSS垂直居中的方法：" class="headerlink" title="3.CSS垂直居中的方法："></a>3.CSS垂直居中的方法：</h3><h4 id="1-display-inline-block-vertical-align-middle"><a href="#1-display-inline-block-vertical-align-middle" class="headerlink" title="1. display: inline-block; vertical-align: middle;"></a>1. display: inline-block; vertical-align: middle;</h4><h4 id="2-父元素display-flex-子元素align-self-center"><a href="#2-父元素display-flex-子元素align-self-center" class="headerlink" title="2. 父元素display: flex; 子元素align-self: center;"></a>2. 父元素display: flex; 子元素align-self: center;</h4><h4 id="3-父元素display-table，子元素display：table-cell"><a href="#3-父元素display-table，子元素display：table-cell" class="headerlink" title="3. 父元素display:table，子元素display：table-cell;"></a>3. 父元素display:table，子元素display：table-cell;</h4><h4 id="4-创建一个隐藏节点-hide，使得隐藏节点的height值为剩余高度的一半即可。"><a href="#4-创建一个隐藏节点-hide，使得隐藏节点的height值为剩余高度的一半即可。" class="headerlink" title="4. 创建一个隐藏节点#hide，使得隐藏节点的height值为剩余高度的一半即可。"></a>4. 创建一个隐藏节点#hide，使得隐藏节点的height值为剩余高度的一半即可。</h4><h4 id="5-已知父元素高度通过transform-子元素：position-relative-top-50-transform-translateY-50"><a href="#5-已知父元素高度通过transform-子元素：position-relative-top-50-transform-translateY-50" class="headerlink" title="5. 已知父元素高度通过transform,子元素：position: relative; top: 50%; transform: translateY(-50%);"></a>5. 已知父元素高度通过transform,子元素：position: relative; top: 50%; transform: translateY(-50%);</h4><h4 id="6-父元素：-position-relative-子元素：-position-absolute-top-50-transform-translateY-50"><a href="#6-父元素：-position-relative-子元素：-position-absolute-top-50-transform-translateY-50" class="headerlink" title="6. 父元素： position: relative; 子元素： position: absolute; top: 50%; transform: translateY(-50%);"></a>6. 父元素： position: relative; 子元素： position: absolute; top: 50%; transform: translateY(-50%);</h4><h4 id="7-设置子元素的line-height值等于父元素的height，这种方法适用于子元素为单行文本的情况。"><a href="#7-设置子元素的line-height值等于父元素的height，这种方法适用于子元素为单行文本的情况。" class="headerlink" title="7. 设置子元素的line-height值等于父元素的height，这种方法适用于子元素为单行文本的情况。"></a>7. 设置子元素的line-height值等于父元素的height，这种方法适用于子元素为单行文本的情况。</h4><p>不写了,<br>直接贴<a href="https://www.cnblogs.com/clj2017/p/9293363.html" target="_blank" rel="noopener">链接</a> = = </p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/05/15/Interview-Questions-CSS/">show all >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Interview-Quesitons-html" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -712,84 +866,9 @@
 
 
   
-    <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/03/06/hello-world/">Hello World</a>
-    </h1>
-  
-
-        
-        <a href="/2020/03/06/hello-world/" class="archive-article-date">
-  	<time datetime="2020-03-06T15:55:55.863Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-06</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/03/06/hello-world/">show all >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+      <a class="extend prev" rel="prev" href="/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/">Next &amp;raquo;</a>
     </nav>
   
 
