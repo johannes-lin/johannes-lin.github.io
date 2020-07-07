@@ -141,6 +141,148 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Coursera上OOP-Java-week2的一个地图config问题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/07/08/Coursera%E4%B8%8AOOP-Java-week2%E7%9A%84%E4%B8%80%E4%B8%AA%E5%9C%B0%E5%9B%BEconfig%E9%97%AE%E9%A2%98/">Coursera上OOP:Java, week2的一个地图config问题</a>
+    </h1>
+  
+
+        
+        <a href="/2020/07/08/Coursera%E4%B8%8AOOP-Java-week2%E7%9A%84%E4%B8%80%E4%B8%AA%E5%9C%B0%E5%9B%BEconfig%E9%97%AE%E9%A2%98/" class="archive-article-date">
+  	<time datetime="2020-07-07T16:42:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-08</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>按照week2的配置可能不行，<br>或是太过于复杂。</p>
+<p>referring to this comment from forum, I at least can make the map show without problems in console log. </p>
+<p><a href="https://www.coursera.org/learn/object-oriented-java/discussions/weeks/2/threads/DOS_0nx-EeaF4g4DZwnHpw/replies/DY4Xe3yBEeaFiRIcNCbR6w" target="_blank" rel="noopener">The Forum Page</a></p>
+<p>And I really wanna say thank you to this guy!</p>
+<p><img src="/thx_a_lot.png" alt="thx_a_lot"></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/07/08/Coursera%E4%B8%8AOOP-Java-week2%E7%9A%84%E4%B8%80%E4%B8%AA%E5%9C%B0%E5%9B%BEconfig%E9%97%AE%E9%A2%98/">show all >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-public-private" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/07/07/public-private/">public &amp; private</a>
+    </h1>
+  
+
+        
+        <a href="/2020/07/07/public-private/" class="archive-article-date">
+  	<time datetime="2020-07-07T11:18:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-07</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1-DEFINITIONS"><a href="#1-DEFINITIONS" class="headerlink" title="1. DEFINITIONS"></a>1. DEFINITIONS</h3><p>&lt;color =  “red”&gt;Public: </p>
+<p>I can call method or class in anywhere, including out of the class in which it is defined.</p>
+<p>&lt;color = “blue”&gt;Private :</p>
+<p>I can only call the method or class within the class I am defining, and nowhere else. </p>
+<p><strong>???</strong></p>
+<p>So, what if I wanna change the properties of an object that uses private class?</p>
+<h3 id="2-SOLUTION"><a href="#2-SOLUTION" class="headerlink" title="2. SOLUTION"></a>2. SOLUTION</h3><p><strong><em>getter:</em></strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">public double getLatitude()</span><br><span class="line"> &#123;</span><br><span class="line"> return this.latitude;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong><em>setter:</em></strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">public void setLatitude(double lat)</span><br><span class="line"> &#123;</span><br><span class="line"> this.latitude &#x3D; lat;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+
+<p>The variables of the class are still private, but by using get and set access, I can gain access to that variable by calling these two methods.</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/07/07/public-private/">show all >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-How-to-define-Classes-and-Create-objects-in-Java" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -181,6 +323,7 @@
 <p>Using this method, we can get the distance between two objects.</p>
 <p>You might be curious about <code>this</code>. Now, let me introduce it to you:</p>
 <p>&lt;color = “red”&gt;<strong>*”this” refers to the object that calls the method. In this case, “this” refers to the method “distance”.*</strong></p>
+<p><em>“When used in functions, “this” keyword refers to the calling object. Every (or most) time you refer to the calling object’s property inside a method, you can use “this” keyword. For example, in the constructor function, you can write this.variableName since you’re referring to the object’s property. It helps since instead of writing the object’s name each time, you can just conveniently write “this” instead. It also slightly improves code’s efficiency unlike referencing the variable without “this” keyword. “</em>  —— Online Resource</p>
 <h2 id="2-Something-to-Preview"><a href="#2-Something-to-Preview" class="headerlink" title="2. Something to Preview"></a>2. Something to Preview</h2><p>And now, How to create new variables?<br><strong><em>answer:</em></strong></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ClassName objName &#x3D; new ClassName(xxx,xxx);</span><br></pre></td></tr></table></figure>
 
@@ -327,9 +470,9 @@
 <p>And when the result of signal detection (or variable measurement) is a continuous value, the boundary between classes must be defined by a threshold.</p>
 <p>To get an appropriate example in a real-world problem, consider a diagnostic test that seeks to determine whether a person has a certain disease. A false positive in this case occurs when the person tests positive, but does not actually have the disease. A false negative, on the other hand, occurs when the person tests negative, suggesting they are healthy, when they actually do have the disease. </p>
 <p>Let us define an experiment from <strong>P</strong> positive instances and <strong>N</strong> negative instances for some condition. The four outcomes can be formulated in a 2×2 <em>contingency table</em> or <em>confusion matrix</em>, as follows: </p>
-<p><img src="/img/roc_outcomes_pic.png" alt="outcomes_pic"></p>
+<p><img src="/roc_outcomes_pic.png" alt="outcomes_pic"></p>
 <h6 id="2-AUROC-AREA-UNDER-ROC"><a href="#2-AUROC-AREA-UNDER-ROC" class="headerlink" title="2. AUROC (AREA UNDER ROC)"></a><em>2. AUROC (AREA UNDER ROC)</em></h6><p>As following, an AUROC of 0.8 means that the model has good discriminatory ability </p>
-<p><img src="/img/roc-curve-v2.png" alt="roc_pic-curve"></p>
+<p><img src="/roc-curve-v2.png" alt="roc_pic-curve"></p>
 
       
 
@@ -831,134 +974,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2020/06/17/framework/">show all >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="front-2-way-binding" class="article article-type-front  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/06/17/2-way-binding/">2-way-binding</a>
-    </h1>
-  
-
-        
-        <a href="/2020/06/17/2-way-binding/" class="archive-article-date">
-  	<time datetime="2020-06-17T00:59:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-17</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/06/17/2-way-binding/">show all >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Interview-Questions-DOM" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/05/16/Interview-Questions-DOM/">Interview Questions--DOM</a>
-    </h1>
-  
-
-        
-        <a href="/2020/05/16/Interview-Questions-DOM/" class="archive-article-date">
-  	<time datetime="2020-05-15T16:12:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-16</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="DOM-Document-Object-Model-文档对象模型"><a href="#DOM-Document-Object-Model-文档对象模型" class="headerlink" title="DOM: Document Object Model(文档对象模型)"></a>DOM: Document Object Model(文档对象模型)</h1><h2 id="1-渲染顺序：代码上由上到下。html（generate-DOM-tree-gt-css-gt-渲染树-gt-绘制完成"><a href="#1-渲染顺序：代码上由上到下。html（generate-DOM-tree-gt-css-gt-渲染树-gt-绘制完成" class="headerlink" title="1. 渲染顺序：代码上由上到下。html（generate DOM tree-&gt;css-&gt;渲染树-&gt;绘制完成"></a>1. 渲染顺序：代码上由上到下。html（generate DOM tree-&gt;css-&gt;渲染树-&gt;绘制完成</h2><p>1、浏览器解析html源码，然后创建一个DOM树。<br>在DOM树中，每一个HTML标签都有一个对应的节点(元素节点),并且每一个文本也都有一个对应的节点(文本节点)。DOM树的根节点就是documentElement，对应的是html标签。</p>
-<p>2、浏览器解析CSS代码，计算出最终的样式数据。<br>对CSS代码中非法的语法它会直接忽略掉。解析CSS的时候会按照如下顺序来定义优先级：浏览器默认设置，用户设置，外联样式，内联样式，html中的style(嵌在标签中的行间样式)。</p>
-<p>3、创建完DOM树并得到最终的样式数据之后，构建一个渲染树。<br>渲染树和DOM树有点像，但是有区别。DOM树完全和html标签一一对应，而渲染树会忽略不需要渲染的元素(head、display:none的元素)。渲染树中每一个节点都存储着对应的CSS属性。</p>
-<p>4、当渲染树创建完成之后，浏览器就可以根据渲染树直接把页面绘制到屏幕上。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/05/16/Interview-Questions-DOM/">show all >></a>
         </p>
       
 
