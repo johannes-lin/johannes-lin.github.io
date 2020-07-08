@@ -19,7 +19,7 @@
     <link rel="alternative" href="/atom.xml" title="Johannes&#39; Blog" type="application/atom+xml">
   
   
-    <link rel="icon" href="/favicon.png">
+    <link rel="icon" href="/img/favicon.png">
   
   <link rel="stylesheet" type="text/css" href="/./main.0cf68a.css">
   <style type="text/css">
@@ -140,6 +140,70 @@
           </div>
           <div id="js-content" class="content-ll">
             
+  
+    <article id="post-angular-commands" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/06/27/angular-commands/">angular commands</a>
+    </h1>
+  
+
+        
+        <a href="/2020/06/27/angular-commands/" class="archive-article-date">
+  	<time datetime="2020-06-27T09:09:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-27</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="1-打包成dist传给后端："><a href="#1-打包成dist传给后端：" class="headerlink" title="1. 打包成dist传给后端："></a>1. 打包成dist传给后端：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ng build --prod --aot</span><br></pre></td></tr></table></figure>
+
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/06/27/angular-commands/">show all >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
   
     <article id="post-markdown-creating" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
@@ -843,78 +907,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2020/05/15/My-First-Front-End-Learning-Notes-Offers-Oriented/">show all >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Angular-note-2020-3-11" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/03/11/Angular-note-2020-3-11/">Angular note 2020.3.11</a>
-    </h1>
-  
-
-        
-        <a href="/2020/03/11/Angular-note-2020-3-11/" class="archive-article-date">
-  	<time datetime="2020-03-11T10:12:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-11</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="Note"><a href="#Note" class="headerlink" title="Note:"></a>Note:</h1><p>It is a document listing all notes that I found useful in my graduate project.<br>This note should be updated whenever I learn new directives.<br>See APIs <a href="https://angular.cn/api" target="_blank" rel="noopener">here</a></p>
-<h1 id="01-ngClass"><a href="#01-ngClass" class="headerlink" title="01. [ngClass]"></a>01. [ngClass]</h1><p>For example,<br>in .ts, define <code>showTargetPhotovoltaic()</code> as below:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">showTargetPhotovoltaic(): string &#123;</span><br><span class="line">    if (x &#x3D;&#x3D;&#x3D; 0) &#123;</span><br><span class="line">      this.targetClass &#x3D; &#39;point1&#39;;</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">        if (x &#x3D;&#x3D;&#x3D; 1) &#123;</span><br><span class="line">              this.targetClass &#x3D; &#39;point2&#39;;</span><br><span class="line">            &#125; else</span><br><span class="line">              if (x &#x3D;&#x3D;&#x3D; 2) &#123;</span><br><span class="line">              this.targetClass &#x3D; &#39;point3&#39;;</span><br><span class="line">            &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#x2F;&#x2F; this.targetClass &#x3D; x;</span><br><span class="line">    return this.targetClass;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>And x is defined as <code>const x = 0;</code>.</p>
-<p>Then,<br>in .html, draw a circle as below:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;circle id&#x3D;&quot;1&quot; [ngClass]&#x3D;showTargetPhotovoltaic() cx&#x3D;&quot;180&quot; cy&#x3D;&quot;300&quot; r&#x3D;&quot;5&quot; fill&#x3D;&quot;#FF0000&quot;stroke&#x3D;&quot;FFFFFF&quot;&gt;&lt;&#x2F;circle&gt;</span><br></pre></td></tr></table></figure>
-<p>in .less, define point1, 2, 3 as it should be.</p>
-<p>As a result, the style of the circle can be changed according to <code>x</code>.</p>
-<h1 id="02-ngIf"><a href="#02-ngIf" class="headerlink" title="02.[ngIf]"></a>02.[ngIf]</h1><p>Use <code>[ngIf] = xxx</code> to show or hide the component that includes it.<br>Remember to define <code>xxx()</code> in .ts;</p>
-<p>To be continued…</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/03/11/Angular-note-2020-3-11/">show all >></a>
         </p>
       
 
