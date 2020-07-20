@@ -56,10 +56,20 @@
 			
 				<li><a href="/">Main Page</a></li>
 	        
+				<li><a href="/front_end/">Front-end</a></li>
+	        
+				<li><a href="/machine_learning/">Machine Learning</a></li>
+	        
+				<li><a href="/interview_orientated/">Interviews</a></li>
+	        
+				<li><a href="/general_tech/">General Tech</a></li>
+	        
 			</ul>
 		</nav>
 		<nav class="header-smart-menu">
     		
+    			
+    			<a q-on="click: openSlider(e, 'innerArchive')" href="javascript:void(0)">All Articles</a>
     			
             
     			
@@ -70,13 +80,7 @@
 		<nav class="header-nav">
 			<div class="social">
 				
-					<a class="github" target="_blank" href="#" title="github"><i class="icon-github"></i></a>
-		        
-					<a class="weibo" target="_blank" href="#" title="weibo"><i class="icon-weibo"></i></a>
-		        
-					<a class="rss" target="_blank" href="#" title="rss"><i class="icon-rss"></i></a>
-		        
-					<a class="zhihu" target="_blank" href="#" title="zhihu"><i class="icon-zhihu"></i></a>
+					<a class="github" target="_blank" href="http://github.com/johannes-lin" title="github"><i class="icon-github"></i></a>
 		        
 			</div>
 		</nav>
@@ -104,27 +108,37 @@
 			
 				
 			
+				
+			
+				
+			
+				
+			
+				
+			
 			
 			
 			<nav class="header-nav">
 				<div class="social">
 					
-						<a class="github" target="_blank" href="#" title="github"><i class="icon-github"></i></a>
-			        
-						<a class="weibo" target="_blank" href="#" title="weibo"><i class="icon-weibo"></i></a>
-			        
-						<a class="rss" target="_blank" href="#" title="rss"><i class="icon-rss"></i></a>
-			        
-						<a class="zhihu" target="_blank" href="#" title="zhihu"><i class="icon-zhihu"></i></a>
+						<a class="github" target="_blank" href="http://github.com/johannes-lin" title="github"><i class="icon-github"></i></a>
 			        
 				</div>
 			</nav>
 
 			<nav class="header-menu js-header-menu">
-				<ul style="width: 50%">
+				<ul style="width: 70%">
 				
 				
-					<li style="width: 100%"><a href="/">Main Page</a></li>
+					<li style="width: 20%"><a href="/">Main Page</a></li>
+		        
+					<li style="width: 20%"><a href="/front_end/">Front-end</a></li>
+		        
+					<li style="width: 20%"><a href="/machine_learning/">Machine Learning</a></li>
+		        
+					<li style="width: 20%"><a href="/interview_orientated/">Interviews</a></li>
+		        
+					<li style="width: 20%"><a href="/general_tech/">General Tech</a></li>
 		        
 				</ul>
 			</nav>
@@ -141,154 +155,19 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-Angular-note-2020-3-11" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-general_tech/kill-a-task" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/03/11/Angular-note-2020-3-11/">Angular note 2020.3.11</a>
+      <a class="article-title" href="/2020/03/09/general_tech/kill-a-task/">kill a task</a>
     </h1>
   
 
         
-        <a href="/2020/03/11/Angular-note-2020-3-11/" class="archive-article-date">
-  	<time datetime="2020-03-11T10:12:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-11</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="Note"><a href="#Note" class="headerlink" title="Note:"></a>Note:</h1><p>It is a document listing all notes that I found useful in my graduate project.<br>This note should be updated whenever I learn new directives.<br>See APIs <a href="https://angular.cn/api" target="_blank" rel="noopener">here</a></p>
-<h1 id="01-ngClass"><a href="#01-ngClass" class="headerlink" title="01. [ngClass]"></a>01. [ngClass]</h1><p>For example,<br>in .ts, define <code>showTargetPhotovoltaic()</code> as below:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">showTargetPhotovoltaic(): string &#123;</span><br><span class="line">    if (x &#x3D;&#x3D;&#x3D; 0) &#123;</span><br><span class="line">      this.targetClass &#x3D; &#39;point1&#39;;</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">        if (x &#x3D;&#x3D;&#x3D; 1) &#123;</span><br><span class="line">              this.targetClass &#x3D; &#39;point2&#39;;</span><br><span class="line">            &#125; else</span><br><span class="line">              if (x &#x3D;&#x3D;&#x3D; 2) &#123;</span><br><span class="line">              this.targetClass &#x3D; &#39;point3&#39;;</span><br><span class="line">            &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#x2F;&#x2F; this.targetClass &#x3D; x;</span><br><span class="line">    return this.targetClass;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>And x is defined as <code>const x = 0;</code>.</p>
-<p>Then,<br>in .html, draw a circle as below:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;circle id&#x3D;&quot;1&quot; [ngClass]&#x3D;showTargetPhotovoltaic() cx&#x3D;&quot;180&quot; cy&#x3D;&quot;300&quot; r&#x3D;&quot;5&quot; fill&#x3D;&quot;#FF0000&quot;stroke&#x3D;&quot;FFFFFF&quot;&gt;&lt;&#x2F;circle&gt;</span><br></pre></td></tr></table></figure>
-<p>in .less, define point1, 2, 3 as it should be.</p>
-<p>As a result, the style of the circle can be changed according to <code>x</code>.</p>
-<h1 id="02-ngIf"><a href="#02-ngIf" class="headerlink" title="02.[ngIf]"></a>02.[ngIf]</h1><p>Use <code>[ngIf] = xxx</code> to show or hide the component that includes it.<br>Remember to define <code>xxx()</code> in .ts;</p>
-<p>To be continued…</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/03/11/Angular-note-2020-3-11/">show all >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-basic-grammars-of-hexo" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/03/09/basic-grammars-of-hexo/">basic grammars of hexo</a>
-    </h1>
-  
-
-        
-        <a href="/2020/03/09/basic-grammars-of-hexo/" class="archive-article-date">
-  	<time datetime="2020-03-09T05:01:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-09</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>learn <a href="https://www.cnblogs.com/hnrainll/p/3514637.html" target="_blank" rel="noopener">here</a></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/03/09/basic-grammars-of-hexo/">show all >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-kill-a-task" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/03/09/kill-a-task/">kill a task</a>
-    </h1>
-  
-
-        
-        <a href="/2020/03/09/kill-a-task/" class="archive-article-date">
+        <a href="/2020/03/09/general_tech/kill-a-task/" class="archive-article-date">
   	<time datetime="2020-03-09T04:58:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-09</time>
 </a>
         
@@ -297,12 +176,9 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>Today, I am glad to learn how to kill a task using cmd:</p>
-<h1 id="TIP-DO-IT-ON-windows"><a href="#TIP-DO-IT-ON-windows" class="headerlink" title="TIP: DO IT ON windows!"></a>TIP: DO IT ON windows!</h1><h2 id="01-Win-R"><a href="#01-Win-R" class="headerlink" title="01.Win + R"></a>01.Win + R</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tasklist</span><br></pre></td></tr></table></figure>
-
-<h2 id="02-Find-to-be-killed-procession"><a href="#02-Find-to-be-killed-procession" class="headerlink" title="02.Find to-be-killed procession"></a>02.Find to-be-killed procession</h2><p>For instance:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git-bash.exe                 14044 Console                   24      5,352 K</span><br></pre></td></tr></table></figure>
-
-<h2 id="03-KILL-IT"><a href="#03-KILL-IT" class="headerlink" title="03.KILL IT!"></a>03.KILL IT!</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">taskkill &#x2F;pid 14044 -t -f</span><br></pre></td></tr></table></figure>
+        
+          <a class="article-more-a" href="/2020/03/09/general_tech/kill-a-task/#more">more >></a>
+        
       
 
       
@@ -314,7 +190,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2020/03/09/kill-a-task/">show all >></a>
+          <a class="article-more-a" href="/2020/03/09/general_tech/kill-a-task/">show all >></a>
         </p>
       
 
@@ -344,19 +220,19 @@
 
 
   
-    <article id="post-learn-about-hexo" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-general_tech/learn-about-hexo" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/03/09/learn-about-hexo/">learn about hexo</a>
+      <a class="article-title" href="/2020/03/09/general_tech/learn-about-hexo/">learn about hexo</a>
     </h1>
   
 
         
-        <a href="/2020/03/09/learn-about-hexo/" class="archive-article-date">
+        <a href="/2020/03/09/general_tech/learn-about-hexo/" class="archive-article-date">
   	<time datetime="2020-03-09T04:21:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-09</time>
 </a>
         
@@ -366,16 +242,9 @@
       
         <p>This paper introduces the process of hexo station</p>
 <p>Based on Windows 10 system, all the following are demonstrated in Windows 10 64 bit.</p>
-<h1 id="01-Install-Node-js"><a href="#01-Install-Node-js" class="headerlink" title="01.Install Node.js"></a>01.Install Node.js</h1><p>Download <a href="https://nodejs.org/en/" target="_blank" rel="noopener">here</a><br><img src="/img/node.png" alt="avatar"></p>
-<h1 id="02-Install-Git"><a href="#02-Install-Git" class="headerlink" title="02.Install Git"></a>02.Install Git</h1><p>Download <a href="https://git-scm.com/downloads" target="_blank" rel="noopener">here</a><br><img src="/img/download1.png" alt="avatar"><br><img src="/img/download2.png" alt="avatar"><br>Tips: This git bash download is equivalent to the terminal window in Linux. We will use this to open the terminal later.</p>
-<h1 id="03-Install-Hexo"><a href="#03-Install-Hexo" class="headerlink" title="03.Install Hexo"></a>03.Install Hexo</h1><p>Create a new folder, such as = = blog4==<br>Open your folder, then right-click in the blank space and choose <code>git bash here</code><br><img src="/img/cnpm.png" alt="avatar"><br>==Install hexo when finished==<br><code>cnpm install -g hexo-cli</code></p>
-<p>Then<code>hexo -v</code><br>to verify installation succeeded</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">hexo: 4.2.0</span><br><span class="line">hexo-cli: 3.1.0</span><br><span class="line">os: Windows_NT 10.0.17763 win32 x64</span><br><span class="line">node: 12.14.0</span><br><span class="line">v8: 7.7.299.13-node.16</span><br><span class="line">uv: 1.33.1</span><br><span class="line">zlib: 1.2.11</span><br><span class="line">brotli: 1.0.7</span><br><span class="line">ares: 1.15.0</span><br><span class="line">modules: 72</span><br><span class="line">nghttp2: 1.39.2</span><br><span class="line">napi: 5</span><br><span class="line">llhttp: 1.1.4</span><br><span class="line">http_parser: 2.8.0</span><br><span class="line">openssl: 1.1.1d</span><br><span class="line">cldr: 35.1</span><br><span class="line">icu: 64.2</span><br><span class="line">tz: 2019c</span><br><span class="line">unicode: 12.1</span><br></pre></td></tr></table></figure>
-
-<p>Next<br><code>hexo init</code><br>It shows as:<br><img src="/img/hexo1.png" alt="avatar"></p>
-<h1 id="04-Operation-Test"><a href="#04-Operation-Test" class="headerlink" title="04.Operation Test"></a>04.Operation Test</h1><p>‘’’<br>hexo clean #to clean cache files<br>hexo g      #to generate file<br>hexo  s     #to run the local server<br>hexo  d   #to upload to server<br>‘’’</p>
-<p>Try hexo s<br><img src="/img/hexo2.png" alt="avatar"><br>Open the browser, input <code>localhost: 4000</code>, and see<br><img src="/img/thumbnail.png" alt="avatar"></p>
-
+        
+          <a class="article-more-a" href="/2020/03/09/general_tech/learn-about-hexo/#more">more >></a>
+        
       
 
       
@@ -387,7 +256,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2020/03/09/learn-about-hexo/">show all >></a>
+          <a class="article-more-a" href="/2020/03/09/general_tech/learn-about-hexo/">show all >></a>
         </p>
       
 
@@ -437,8 +306,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>HELLO!!!<br><img src="/img/avatar.jpg" alt="avatar"></p>
-
+        <p>HELLO!!!</p>
+        
+          <a class="article-more-a" href="/2020/03/07/hello-there/#more">more >></a>
+        
       
 
       
@@ -564,19 +435,9 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
+        
+          <a class="article-more-a" href="/2020/03/06/hello-world/#more">more >></a>
+        
       
 
       
@@ -629,6 +490,11 @@
         </div>
       </div>
       <footer id="footer">
+	<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+	</script>
+	<!-- <span id="busuanzi_container_site_pv">
+		本站总访问量<span id="busuanzi_value_site_pv"></span>次
+	</span> -->
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
@@ -652,7 +518,7 @@
 		open_in_new: false,
 		toc_hide_index: true,
 		root: "/",
-		innerArchive: false,
+		innerArchive: true,
 		showTags: false
 	}
 </script>
@@ -669,6 +535,8 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     
     
       
+      
+      
     
       
       
@@ -680,14 +548,71 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     
     
       
+      <li style="width: 50%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">All Articles</a></li>
+      
         
       
-      <li style="width: 100%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">About Me</a></li>
+      <li style="width: 50%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">About Me</a></li>
       
         
     </ul>
   </div>
   <div class="tools-wrap">
+    
+    	<section class="tools-section tools-section-all" q-show="innerArchive">
+        <div class="search-wrap">
+          <input class="search-ipt" q-model="search" type="text" placeholder="find something…">
+          <i class="icon-search icon" q-show="search|isEmptyStr"></i>
+          <i class="icon-close icon" q-show="search|isNotEmptyStr" q-on="click:clearChose(e)"></i>
+        </div>
+        <div class="widget tagcloud search-tag">
+          <p class="search-tag-wording">tag:</p>
+          <label class="search-switch">
+            <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
+          </label>
+          <ul class="article-tag-list" q-show="showTags">
+            
+            <div class="clearfix"></div>
+          </ul>
+        </div>
+        <ul class="search-ul">
+          <p q-show="jsonFail" style="padding: 20px; font-size: 12px;">
+            缺失模块。<br/>1、请确保node版本大于6.2<br/>2、在博客根目录（注意不是yilia根目录）执行以下命令：<br/> npm i hexo-generator-json-content --save<br/><br/>
+            3、在根目录_config.yml里添加配置：
+<pre style="font-size: 12px;" q-show="jsonFail">
+  jsonContent:
+    meta: false
+    pages: false
+    posts:
+      title: true
+      date: true
+      path: true
+      text: false
+      raw: false
+      content: false
+      slug: false
+      updated: false
+      comments: false
+      link: false
+      permalink: false
+      excerpt: false
+      categories: false
+      tags: true
+</pre>
+          </p>
+          <li class="search-li" q-repeat="items" q-show="isShow">
+            <a q-attr="href:path|urlformat" class="search-title"><i class="icon-quo-left icon"></i><span q-text="title"></span></a>
+            <p class="search-time">
+              <i class="icon-calendar icon"></i>
+              <span q-text="date|dateformat"></span>
+            </p>
+            <p class="search-tag">
+              <i class="icon-price-tags icon"></i>
+              <span q-repeat="tags" q-on="click:choseTag(e, name)" q-text="name|tagformat"></span>
+            </p>
+          </li>
+        </ul>
+    	</section>
     
 
     

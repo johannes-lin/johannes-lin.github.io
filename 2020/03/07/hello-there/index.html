@@ -17,7 +17,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://yoursite.com/img/avatar.jpg">
 <meta property="article:published_time" content="2020-03-06T18:23:18.000Z">
-<meta property="article:modified_time" content="2020-03-09T04:14:56.018Z">
+<meta property="article:modified_time" content="2020-07-20T11:31:48.846Z">
 <meta property="article:author" content="Johannes">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://yoursite.com/img/avatar.jpg">
@@ -62,10 +62,20 @@
 			
 				<li><a href="/">Main Page</a></li>
 	        
+				<li><a href="/front_end/">Front-end</a></li>
+	        
+				<li><a href="/machine_learning/">Machine Learning</a></li>
+	        
+				<li><a href="/interview_orientated/">Interviews</a></li>
+	        
+				<li><a href="/general_tech/">General Tech</a></li>
+	        
 			</ul>
 		</nav>
 		<nav class="header-smart-menu">
     		
+    			
+    			<a q-on="click: openSlider(e, 'innerArchive')" href="javascript:void(0)">All Articles</a>
     			
             
     			
@@ -76,13 +86,7 @@
 		<nav class="header-nav">
 			<div class="social">
 				
-					<a class="github" target="_blank" href="#" title="github"><i class="icon-github"></i></a>
-		        
-					<a class="weibo" target="_blank" href="#" title="weibo"><i class="icon-weibo"></i></a>
-		        
-					<a class="rss" target="_blank" href="#" title="rss"><i class="icon-rss"></i></a>
-		        
-					<a class="zhihu" target="_blank" href="#" title="zhihu"><i class="icon-zhihu"></i></a>
+					<a class="github" target="_blank" href="http://github.com/johannes-lin" title="github"><i class="icon-github"></i></a>
 		        
 			</div>
 		</nav>
@@ -110,27 +114,37 @@
 			
 				
 			
+				
+			
+				
+			
+				
+			
+				
+			
 			
 			
 			<nav class="header-nav">
 				<div class="social">
 					
-						<a class="github" target="_blank" href="#" title="github"><i class="icon-github"></i></a>
-			        
-						<a class="weibo" target="_blank" href="#" title="weibo"><i class="icon-weibo"></i></a>
-			        
-						<a class="rss" target="_blank" href="#" title="rss"><i class="icon-rss"></i></a>
-			        
-						<a class="zhihu" target="_blank" href="#" title="zhihu"><i class="icon-zhihu"></i></a>
+						<a class="github" target="_blank" href="http://github.com/johannes-lin" title="github"><i class="icon-github"></i></a>
 			        
 				</div>
 			</nav>
 
 			<nav class="header-menu js-header-menu">
-				<ul style="width: 50%">
+				<ul style="width: 70%">
 				
 				
-					<li style="width: 100%"><a href="/">Main Page</a></li>
+					<li style="width: 20%"><a href="/">Main Page</a></li>
+		        
+					<li style="width: 20%"><a href="/front_end/">Front-end</a></li>
+		        
+					<li style="width: 20%"><a href="/machine_learning/">Machine Learning</a></li>
+		        
+					<li style="width: 20%"><a href="/interview_orientated/">Interviews</a></li>
+		        
+					<li style="width: 20%"><a href="/general_tech/">General Tech</a></li>
 		        
 				</ul>
 			</nav>
@@ -165,7 +179,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>HELLO!!!<br><img src="/img/avatar.jpg" alt="avatar"></p>
+        <p>HELLO!!!</p>
+<a id="more"></a>
+
+<p><img src="/img/avatar.jpg" alt="avatar"></p>
 
       
 
@@ -259,7 +276,7 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/03/09/learn-about-hexo/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2020/03/09/general_tech/learn-about-hexo/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
@@ -290,6 +307,19 @@
         </div>
         
         
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    No Menu
+                    </div>
+                </span>
+            </div>
+        </div>
+        
     </div>
 </aside>
 
@@ -310,6 +340,11 @@
         </div>
       </div>
       <footer id="footer">
+	<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+	</script>
+	<!-- <span id="busuanzi_container_site_pv">
+		本站总访问量<span id="busuanzi_value_site_pv"></span>次
+	</span> -->
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
@@ -333,7 +368,7 @@
 		open_in_new: false,
 		toc_hide_index: true,
 		root: "/",
-		innerArchive: false,
+		innerArchive: true,
 		showTags: false
 	}
 </script>
@@ -350,6 +385,8 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     
     
       
+      
+      
     
       
       
@@ -361,14 +398,71 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     
     
       
+      <li style="width: 50%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">All Articles</a></li>
+      
         
       
-      <li style="width: 100%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">About Me</a></li>
+      <li style="width: 50%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">About Me</a></li>
       
         
     </ul>
   </div>
   <div class="tools-wrap">
+    
+    	<section class="tools-section tools-section-all" q-show="innerArchive">
+        <div class="search-wrap">
+          <input class="search-ipt" q-model="search" type="text" placeholder="find something…">
+          <i class="icon-search icon" q-show="search|isEmptyStr"></i>
+          <i class="icon-close icon" q-show="search|isNotEmptyStr" q-on="click:clearChose(e)"></i>
+        </div>
+        <div class="widget tagcloud search-tag">
+          <p class="search-tag-wording">tag:</p>
+          <label class="search-switch">
+            <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
+          </label>
+          <ul class="article-tag-list" q-show="showTags">
+            
+            <div class="clearfix"></div>
+          </ul>
+        </div>
+        <ul class="search-ul">
+          <p q-show="jsonFail" style="padding: 20px; font-size: 12px;">
+            缺失模块。<br/>1、请确保node版本大于6.2<br/>2、在博客根目录（注意不是yilia根目录）执行以下命令：<br/> npm i hexo-generator-json-content --save<br/><br/>
+            3、在根目录_config.yml里添加配置：
+<pre style="font-size: 12px;" q-show="jsonFail">
+  jsonContent:
+    meta: false
+    pages: false
+    posts:
+      title: true
+      date: true
+      path: true
+      text: false
+      raw: false
+      content: false
+      slug: false
+      updated: false
+      comments: false
+      link: false
+      permalink: false
+      excerpt: false
+      categories: false
+      tags: true
+</pre>
+          </p>
+          <li class="search-li" q-repeat="items" q-show="isShow">
+            <a q-attr="href:path|urlformat" class="search-title"><i class="icon-quo-left icon"></i><span q-text="title"></span></a>
+            <p class="search-time">
+              <i class="icon-calendar icon"></i>
+              <span q-text="date|dateformat"></span>
+            </p>
+            <p class="search-tag">
+              <i class="icon-price-tags icon"></i>
+              <span q-repeat="tags" q-on="click:choseTag(e, name)" q-text="name|tagformat"></span>
+            </p>
+          </li>
+        </ul>
+    	</section>
     
 
     
