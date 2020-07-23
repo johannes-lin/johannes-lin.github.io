@@ -6,21 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>kill a task | Johannes&#39; Blog</title>
+  <title>public &amp; private | Johannes&#39; Blog</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="Today, I am glad to learn how to kill a task using cmd:">
+  <meta name="description" content="1. DEFINITIONS&lt;color &#x3D;  “red”&gt;Public:  I can call method or class in anywhere, including out of the class in which it is defined.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="kill a task">
-<meta property="og:url" content="http://yoursite.com/2020/03/09/kill-a-task/index.html">
+<meta property="og:title" content="public &amp; private">
+<meta property="og:url" content="http://yoursite.com/2020/07/07/public-private/index.html">
 <meta property="og:site_name" content="Johannes&#39; Blog">
-<meta property="og:description" content="Today, I am glad to learn how to kill a task using cmd:">
+<meta property="og:description" content="1. DEFINITIONS&lt;color &#x3D;  “red”&gt;Public:  I can call method or class in anywhere, including out of the class in which it is defined.">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-03-09T04:58:34.000Z">
-<meta property="article:modified_time" content="2020-07-23T06:48:59.475Z">
+<meta property="article:published_time" content="2020-07-07T11:18:47.000Z">
+<meta property="article:modified_time" content="2020-07-23T05:49:41.341Z">
 <meta property="article:author" content="Johannes">
-<meta property="article:tag" content="General Tech">
+<meta property="article:tag" content="Java">
+<meta property="article:tag" content="Oriented Object Programming">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Johannes&#39; Blog" type="application/atom+xml">
@@ -190,14 +191,14 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-kill-a-task" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-public-private" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
   
   
     <h1 class="article-title" itemprop="name">
-      kill a task
+      public &amp; private
     </h1>
   
 
@@ -209,8 +210,8 @@
               <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
         </span>
 
-<a href="/2020/03/09/kill-a-task/" class="archive-article-date">
-        <time datetime="2020-03-09T04:58:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-09</time>
+<a href="/2020/07/07/public-private/" class="archive-article-date">
+        <time datetime="2020-07-07T11:18:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-07</time>
 </a>
 
   
@@ -223,7 +224,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">46字</span>
+      <span class="post-count">111字</span>
     </span>
   </span>
 
@@ -243,15 +244,22 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <p>Today, I am glad to learn how to kill a task using cmd:</p>
+    <h3 id="1-DEFINITIONS"><a href="#1-DEFINITIONS" class="headerlink" title="1. DEFINITIONS"></a>1. DEFINITIONS</h3><p>&lt;color =  “red”&gt;Public: </p>
+<p>I can call method or class in anywhere, including out of the class in which it is defined.</p>
 <a id="more"></a>
 
-<h1 id="TIP-DO-IT-ON-windows"><a href="#TIP-DO-IT-ON-windows" class="headerlink" title="TIP: DO IT ON windows!"></a>TIP: DO IT ON windows!</h1><h2 id="01-Win-R"><a href="#01-Win-R" class="headerlink" title="01.Win + R"></a>01.Win + R</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tasklist</span><br></pre></td></tr></table></figure>
+<p>&lt;color = “blue”&gt;Private :</p>
+<p>I can only call the method or class within the class I am defining, and nowhere else. </p>
+<p><strong>???</strong></p>
+<p>So, what if I wanna change the properties of an object that uses private class?</p>
+<h3 id="2-SOLUTION"><a href="#2-SOLUTION" class="headerlink" title="2. SOLUTION"></a>2. SOLUTION</h3><p><strong><em>getter:</em></strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">public double getLatitude()</span><br><span class="line"> &#123;</span><br><span class="line"> return this.latitude;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
 
-<h2 id="02-Find-to-be-killed-procession"><a href="#02-Find-to-be-killed-procession" class="headerlink" title="02.Find to-be-killed procession"></a>02.Find to-be-killed procession</h2><p>For instance:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git-bash.exe                 14044 Console                   24      5,352 K</span><br></pre></td></tr></table></figure>
+<p><strong><em>setter:</em></strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">public void setLatitude(double lat)</span><br><span class="line"> &#123;</span><br><span class="line"> this.latitude &#x3D; lat;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
 
-<h2 id="03-KILL-IT"><a href="#03-KILL-IT" class="headerlink" title="03.KILL IT!"></a>03.KILL IT!</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">taskkill &#x2F;pid 14044 -t -f</span><br></pre></td></tr></table></figure>
+<p>The variables of the class are still private, but by using get and set access, I can gain access to that variable by calling these two methods.</p>
+
     
 
     
@@ -287,7 +295,7 @@
         </li>
         <li>
           <strong>本文链接：</strong>
-          <a href="http://yoursite.com/2020/03/09/kill-a-task/" title="kill a task" target="_blank">http://yoursite.com/2020/03/09/kill-a-task/</a>
+          <a href="http://yoursite.com/2020/07/07/public-private/" title="public &amp; private" target="_blank">http://yoursite.com/2020/07/07/public-private/</a>
         </li>
         
         <li>
@@ -309,7 +317,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">General Tech</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Oriented Object Programming</a>
         		</li>
       		
 		</ul>
@@ -365,7 +377,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/03/09/kill-a-task/" alt="微信分享二维码"> -->
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/07/07/public-private/" alt="微信分享二维码"> -->
     </div>
 </div>
 
@@ -380,18 +392,18 @@
 
 <nav id="article-nav">
   
-    <a href="/2020/03/11/Angular-note-2020-3-11/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2020/07/08/Coursera%E4%B8%8AOOP-Java-week2%E7%9A%84%E4%B8%80%E4%B8%AA%E5%9C%B0%E5%9B%BEconfig%E9%97%AE%E9%A2%98/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          Angular note 2020.3.11
+          Coursera上OOP:Java, week2的一个地图config问题
         
       </div>
     </a>
   
   
-    <a href="/2020/03/09/learn-about-hexo/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">learn about hexo</div>
+    <a href="/2020/07/07/Coursera%E4%B8%8Aweek2%EF%BC%8CScope%E7%9A%84%E9%97%AE%E9%A2%98/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">How to define Classes and Create objects in Java?</div>
       <i class="icon-circle-right"></i>
     </a>
   
