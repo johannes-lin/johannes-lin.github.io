@@ -6,21 +6,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>坎坷人生 | Johannes&#39; Blog</title>
+  <title>TCP &amp; Socket | Johannes&#39; Blog</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="2018运气不好的分组机器人：我做的事（搭建）：首先仔细吃透了往届获奖组的代码，包括电机驱动、四轮配合、各段路径的行进规划、红外的接入和调试、灰度管的接入和调试、使用主板进行电源管理、平台上的通过6050陀螺仪将车体旋转180°等。 尚佳的路径规划 后根据实践和交流，优化路径上到达方法和处理各拐点速度的方法。 王子豪做的事（协调）：焊板子、拼车。然后做好各组间的协调工作。 让他帮忙借点东西。 后来">
+  <meta name="description" content="TCP &amp; Socket socket()函数：​       就是生成一个用于通信的套接字文件描述符 sockfd(socket() creates an endpoint for communication and returns a descriptor); 　　这个套接字描述符可以作为稍后bind()函数的绑定对象。 socket(AF_INET, SOCK_STREAM, IPP">
 <meta property="og:type" content="article">
-<meta property="og:title" content="坎坷人生">
-<meta property="og:url" content="http://yoursite.com/2020/08/24/%E5%9D%8E%E5%9D%B7%E4%BA%BA%E7%94%9F/index.html">
+<meta property="og:title" content="TCP &amp; Socket">
+<meta property="og:url" content="http://yoursite.com/2020/08/24/TCP%20&%20Socket/index.html">
 <meta property="og:site_name" content="Johannes&#39; Blog">
-<meta property="og:description" content="2018运气不好的分组机器人：我做的事（搭建）：首先仔细吃透了往届获奖组的代码，包括电机驱动、四轮配合、各段路径的行进规划、红外的接入和调试、灰度管的接入和调试、使用主板进行电源管理、平台上的通过6050陀螺仪将车体旋转180°等。 尚佳的路径规划 后根据实践和交流，优化路径上到达方法和处理各拐点速度的方法。 王子豪做的事（协调）：焊板子、拼车。然后做好各组间的协调工作。 让他帮忙借点东西。 后来">
+<meta property="og:description" content="TCP &amp; Socket socket()函数：​       就是生成一个用于通信的套接字文件描述符 sockfd(socket() creates an endpoint for communication and returns a descriptor); 　　这个套接字描述符可以作为稍后bind()函数的绑定对象。 socket(AF_INET, SOCK_STREAM, IPP">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-08-24T10:14:23.912Z">
-<meta property="article:modified_time" content="2020-08-24T07:15:38.801Z">
+<meta property="og:image" content="c:%5CUsers%5Cadmin%5CAppData%5CLocal%5CTemp%5C1598264993054.png">
+<meta property="article:published_time" content="2020-08-24T10:23:56.669Z">
+<meta property="article:modified_time" content="2020-08-24T10:29:56.408Z">
 <meta property="article:author" content="Johannes">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="c:%5CUsers%5Cadmin%5CAppData%5CLocal%5CTemp%5C1598264993054.png">
   
     <link rel="alternative" href="/atom.xml" title="Johannes&#39; Blog" type="application/atom+xml">
   
@@ -189,14 +191,14 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-坎坷人生" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-TCP &amp; Socket" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
   
   
     <h1 class="article-title" itemprop="name">
-      坎坷人生
+      TCP &amp; Socket
     </h1>
   
 
@@ -208,8 +210,8 @@
               <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
         </span>
 
-<a href="/2020/08/24/%E5%9D%8E%E5%9D%B7%E4%BA%BA%E7%94%9F/" class="archive-article-date">
-        <time datetime="2020-08-24T10:14:23.912Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-24</time>
+<a href="/2020/08/24/TCP%20&%20Socket/" class="archive-article-date">
+        <time datetime="2020-08-24T10:23:56.669Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-24</time>
 </a>
 
   
@@ -222,7 +224,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">1.2k字</span>
+      <span class="post-count">5.1k字</span>
     </span>
   </span>
 
@@ -231,7 +233,7 @@
     <span class="post-meta-item-icon">
       <i class="icon-book icon"></i>
       <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">3分</span>
+      <span class="post-count">18分</span>
     </span>
   </span>
 </div>
@@ -242,41 +244,19 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <h2 id="2018运气不好的分组"><a href="#2018运气不好的分组" class="headerlink" title="2018运气不好的分组"></a>2018运气不好的分组</h2><h2 id="机器人："><a href="#机器人：" class="headerlink" title="机器人："></a>机器人：</h2><h3 id="我做的事（搭建）："><a href="#我做的事（搭建）：" class="headerlink" title="我做的事（搭建）："></a>我做的事（搭建）：</h3><p>首先仔细吃透了往届获奖组的代码，包括电机驱动、四轮配合、各段路径的行进规划、红外的接入和调试、灰度管的接入和调试、使用主板进行电源管理、平台上的通过6050陀螺仪将车体旋转180°等。</p>
-<p>尚佳的路径规划</p>
-<p>后根据实践和交流，优化路径上到达方法和处理各拐点速度的方法。</p>
-<h3 id="王子豪做的事（协调）："><a href="#王子豪做的事（协调）：" class="headerlink" title="王子豪做的事（协调）："></a>王子豪做的事（协调）：</h3><p>焊板子、拼车。然后做好各组间的协调工作。</p>
-<p>让他帮忙借点东西。</p>
-<p>后来前几次跑全程的时候也是他去跑的，然后把各个路段的问题反馈给我。</p>
-<h3 id="王华梁做的事（优化）："><a href="#王华梁做的事（优化）：" class="headerlink" title="王华梁做的事（优化）："></a>王华梁做的事（优化）：</h3><p>各路段排错，</p>
-<p>优化路径</p>
-<p>添加上位机的触摸屏，可供选择路径</p>
-<p>提速（提高每段长直线上的速度）</p>
-<p>机械结构优化——保持四轮平衡，并保证时刻同时触地。稳压板和电源对称放在车体两端，以保持重心在车的轴线上。</p>
-<p>保持上位机机器人摆臂角度统一。</p>
-<h2 id="嵌入式大赛（3月初-6月初，新苗项目：传感器与单片机通信基本搭建完成；-8月底到10月中，加入服务器、网页、片上系统）："><a href="#嵌入式大赛（3月初-6月初，新苗项目：传感器与单片机通信基本搭建完成；-8月底到10月中，加入服务器、网页、片上系统）：" class="headerlink" title="嵌入式大赛（3月初-6月初，新苗项目：传感器与单片机通信基本搭建完成； 8月底到10月中，加入服务器、网页、片上系统）："></a>嵌入式大赛（3月初-6月初，新苗项目：传感器与单片机通信基本搭建完成； 8月底到10月中，加入服务器、网页、片上系统）：</h2><h3 id="我做的事："><a href="#我做的事：" class="headerlink" title="我做的事："></a>我做的事：</h3><p>（1）      和传感器、服务器的串口通讯的基本上全部代码</p>
-<p>（2）      通讯调试</p>
-<p>（3）      uCos-III的部分移植</p>
-<p>（4）      整篇作品报告，全部的全部</p>
-<p>（5）      全部的答辩ppt</p>
-<p>（6）      答辩全程（答辩讲稿、答辩问题准备、答辩试讲）</p>
-<p>（7）      作品展示海报板设计编辑</p>
-<p>（8）      展示网页页面的波形图的添加，以及事项提醒功能的添加</p>
-<h3 id="导师的研究生做的事："><a href="#导师的研究生做的事：" class="headerlink" title="导师的研究生做的事："></a>导师的研究生做的事：</h3><p>（1）      片上系统文档提供</p>
-<p>（2）      4G模块和服务器租借</p>
-<p>（3）      确立服务器与单片机为长期保持</p>
-<p>（4）      ucos-III的大部分移植</p>
-<p>（5）      移植后的调试</p>
-<p>（6）      全部的4G上网模块</p>
-<p>（7）      服务器长期保持在线功能添加</p>
-<h3 id="一同参赛的人："><a href="#一同参赛的人：" class="headerlink" title="一同参赛的人："></a>一同参赛的人：</h3><h4 id="徐希舟："><a href="#徐希舟：" class="headerlink" title="徐希舟："></a>徐希舟：</h4><p>（1）      服务器通讯部分的搭建</p>
-<p>（2）      服务器日志的输出</p>
-<p>（3）      通信调试</p>
-<h4 id="徐思源："><a href="#徐思源：" class="headerlink" title="徐思源："></a>徐思源：</h4><p>（1）      学习网页制作（sb）</p>
-<h2 id="该死的2020上半年"><a href="#该死的2020上半年" class="headerlink" title="该死的2020上半年"></a>该死的2020上半年</h2><p>我们是去年考研前两周的时候说要开始选毕设导师。当时在考研冲刺，所以没管。考好之后想起来选的时候，只剩下一堆纯强电的项目和剩下一点点不是强电的项目。然后我就选了做网页的。</p>
-<p>2月底考研成绩出来以后，我猜今年会降分录取的。所以每天花很多时间准备复试。但是3月底复试分数线出来之后就傻了，比我分数高11分。觉得调剂都是去没人去的专业，被那边的老师克扣，压榨；如果调回本校，那还是算了，所以就不想调了。然后我就想好好做毕设算了。</p>
-<p>于是先学习前端的基础和框架还有点后端的写法。然后到5月左右的时候，毕设基本做完了，我开始找工作。想找前端的工作，但是春招老早就结束了，剩下的要么是小企业，要么就是事业单位了。当时真的迷茫，我妈强制我准备电网考试。但复习时间太短，初试都没过。</p>
-<p>暑假开始就是电网考试结束，7月中旬。我继续学习了一段时间的前端，还重新学了下数据结构和算法。然后，毕设的导师就邀请我去他的初创公司干活，我当时猜他来邀请我是因为他在毕设答辩完的评分环节给答辩小组长打了招呼，这样想想就觉得也是应该帮他干点活的。再加上我也没找到工作，所以我就去了。去的这几个礼拜，一直在搞他们公司的人员工作安排，产品项目报告。和他邀请时说的主要是做前端技术完全不符。问的时候，他说先把公司的业务理清楚，因为是初创，什么东西都没清楚。我就想干到月底，如果还没有转技术，就拿工资跑路。结果还真的一直在搞文档，还让我把我自己的毕业论文里有关的产品内容整理出来，写成产品报告。</p>
+    <h3 id="TCP-amp-Socket"><a href="#TCP-amp-Socket" class="headerlink" title="TCP &amp; Socket"></a>TCP &amp; Socket</h3><p><img src="C:%5CUsers%5Cadmin%5CAppData%5CLocal%5CTemp%5C1598264993054.png" alt="1598264993054"></p>
+<h5 id="socket-函数："><a href="#socket-函数：" class="headerlink" title="socket()函数："></a>socket()函数：</h5><p>​       就是生成一个用于通信的套接字文件描述符</p>
+<p>sockfd(socket() creates an endpoint for communication and returns a descriptor);</p>
+<p>　　这个套接字描述符可以作为稍后bind()函数的绑定对象。</p>
+<p>socket(AF_INET, SOCK_STREAM, IPPROTO_TCP); </p>
+<p>这是socket函数在内核源码中定义的函数，从这个结构中可看出来，<br>　　socket函数仅创建了一个socket结构文件，但并没有关联任何IP和端口，其中AF_INET是AddressFamily(地址族)是Inernet网络地址，SOCK_STREAM,是指定socket接受数据格式，共有两种，一种是stream(流,)，另一种是dgram(数据报)，最后一个是协议TCP/UDP.很多时候，内核其实根据AF_INET和SOCK_STREAM就可以推演出应该使用TCP，因此IPPROTO_TCP/UDP可省略,但这并不是好习惯。</p>
+<h5 id="bind-函数："><a href="#bind-函数：" class="headerlink" title="bind()函数： 　　　　"></a>bind()函数： 　　　　</h5><p>服务程序通过分析配置文件，从中解析出想要监听的地址和端口，再加上可以通过socket()函数生成的套接字sockfd， 　　就可以使用bind()函数将这个套接字绑定到要监听的地址和端口组合”addr:port”上。绑定了端口的套接字可以作为listen() 　　函数的监听对象。绑定了地址和端口的套接字就有了源地址和源端口(对服务器自身来说是源)，再加上通过配置文件中 　　指定的协议类型，五元组中就有了其中3个元组。即：{protocal,src_addr,src_port} 但是，常见到有些服务程序可以 　　配置监听多个地址、端口实现多实例。这实际上就是通过多次socket()+bind()系统调用生成并绑定多个套接字实现的。 　　　　所谓五元组，即 {protocal, Server_src_addr, Server_src_port, Client_dest_addr, Client_dest_port} 　　　　当还处于监听状态时，套接字称为监听套接字，此时它只包含三元组。 </p>
+<p>当客户端与服务器通过三次握手建链，同步了TCP保障会话的状态序列号(Sequence Number)， 　　　窗口大小(Window Size)以及Client的源IP和源端口，这是服务器端的监听套接字就可以构建成完整的 　　　专用连接套接字，即五个关键元素组成了新的socket。当然Client也会生成本次于Server通信的专用 　　　连接套接字。注意：是<strong>专用连接套接字</strong>  　　补充说明: 　　　　TCP之所以称为可靠连接就是由于其包含Sequence number和Acknowledgment number， 　　　TCP通过它们来实现数据传输的确认机制，简单理解如下:  　　　　#这里为方便说明,将汉字，单词 和 点直接简单认为是1个数据. 　　　　#ack=1,是假设Server三次握手最后一次传递的seq=0,我要对它发给我的数据做确认 　　　　Client—-[我想获取index.html, seq=7,ack=1]—————–&gt;Server  　　　　Server—[index.html{欢迎来到我们的网站.},seq=12,ack=8]—&gt;Client 　　　　Server—[{学习园地.},seq=17,ack=8]—————————&gt;Client  　　　　这里为了方便说明，但并非完全准确  　　　　假设Server要传递给Client的数据量很大，被拆分成了多个包，这里仅以两个为例说明， 　　　　第一个报文总长度为12个字，假设已经满了，然后又生成了第二个数据包长度5个字， 　　　这时它们的序列号需要注意，你会发现其实序列号就是传输数据量的说明，即我这次给你传了 　　   多少数据，假设网络状况不是很好，第一个包在传输过程中丢失了，Client收到了第二个报文， 　　   Client解包后，发现这个序列号是13-17，然后，Client就会给Server发送一个ACK报文，这个报文 　　   仅对13-17段数据做确认，Server收到后，过了最大RTT(数据包从Server到Client直接最大往返时间) 　　   发现Client还是没有对1～12这段数据做确认，于是知道第一个报文在网络中传输时丢包了，然后 　　   就会仅将1～12这段数据再次发送给Client，当Server在RTT之前收到Client对这段数据的ACK， 　　  则认为通信完成，等待Client后续的请求，若长连接超时，Client没有再次发起请求，则Server将 　　  主动断开连接，然后进入TCP的四次挥手阶段。 　　　　注意：这里确认13～17这段数据时是这样的: 　　　　　　Client–[seq=9,ack=18]————————————&gt;Server 　　　　　　#Server是发送数据者，它知道自己发了那些数据,Server看到18,对比发送列表，1～12，13～17， 　　　　　　  这个ACK包确认的一定是第二个包，因为第一个包的ACK seq应该是13，而不是17.  　　说明: 　　　　实际上一个数据包的大小是由网卡上的MTU值决定，默认MTU是1500个字节，去掉TCP/IP协议栈 　　  封装头部大概是1446个字节，然后还要去掉上层不同协议封装的头部字节数，剩下才是这个数据包实际 　　  能装多少数据，但这个还是额定数据量，正式往数据包中装数据还要看窗口大小(window size),它是 　　Client和Server之间协商出来的，因为Server或Client都可能因为某些原因接收不了很多数据，因此为了 　　能通信，在通信前是必须互相告知自己一次最多能接受多少数据的。 　　MTU(最大传输单元)： 现在网络中所有设备都默认是1500字节，一个数据包在网络中传输最大必须 　　　　　　是1500字节，只要超过就会被网络设备切片后，重新封装再发生，但前提是IP包中允许分片 　　　　　　位是1，即允许分片，否则该数据包将被丢弃。 </p>
+<h5 id="listen-函数"><a href="#listen-函数" class="headerlink" title="listen()函数:"></a>listen()函数:</h5><p>　　int listen(int sockfd, int backlog); 这是内核源码中listen函数的定义,sockfd 就是bind函数关联后的套接字文件描述符。<br>　　backlog：<br>　　　　Linux Kernel2.2以前，backlog 用于设置上图中未完成和已完成队列的最大总长度(实际上是只有一个队列，<br>　　　　但分为两种状态)，实际目前这种是BSD衍生的一种套接字类型，它采用了一个队列，在这单个队列中存放<br>　　　　3次握手过程中的所有连接，但是队列中的每个连接分为两种状态：syn-recv和established。</p>
+<p>　　Linux Kernel2.2开始，这个参数只表示已完成队列(accept queue)的最大长度，而/proc/sys/net/ipv4/tcp_max_syn_backlog<br>　　则用于设置未完成队列(syn queue/syn backlog)的最大长度。/proc/sys/net/core/somaxconn则是硬限制已完成队列<br>　　的最大长度，默认为128，如果backlog参数大于somaxconn，则backlog会被截短为该硬限制值。</p>
+<p>下面说明listen函数，已httpd为参考来说明，这样更便于说明问题；另外下面说明并不一定完全正确，多数是根据我的理解 　推演出来的，所以下面说明仅供参考，希望大牛路过，能给予指点，不要让我误人子弟了。     当httpd进程被启动后，它通过读取配置文件，获取到要监听的地址和端口，完成socket和bind后，就进入到listen函数了，    listen系统调用会向内核管理的socket set(集合)中注册自己的监听套接字，然后返回，此时作为httpd的perforce模型的话，    它将调用</p>
+<h5 id="select-函数："><a href="#select-函数：" class="headerlink" title="select()函数："></a>select()函数：</h5><p>此函数会发起系统调用来获取内核管理的socket set，并检查其中自己所关心的socket是否处于就绪态，    即是否变为可读,可写,异常; 若非就绪态,就继续过会儿在检查，这期间httpd将处于阻塞状态的，直到httpd所分配的CPU时间片    都耗尽，CPU会将httpd从CPU上转入内存处于睡眠，等待下次被调度到CPU上执行；    假设现在有用户发起访问,则大致过程如下: 　　　首先，服务器网卡接收到数据流后，会立刻给CPU发送中断信号，CPU收到后，会立即将手头正在处理的事务 　　全部挂起，并立即检测网卡上是否有DMA芯片,若有就直接发送指令告诉DMA芯片，你将数据流复制到指定的DMA_ZONE的 　　核心内存区中的指定地址段中，然后DMA芯片就开始复制,CPU重新恢复挂起的进程，继续处理，当网卡DMA芯片再次发送 　　中断告诉CPU我复制完了，此时CPU将立即挂载正在处理的进程，并激活内核，内核获得CPU控制权后，启动TCP/IP协议栈 　　驱动处理接收到的数据包,解封装后，发现是一个要访问本机80套接字的SYN请求,于是内核检查socket set发现有这样的监听 　　套接字,于是内核将SYN数据复制到Kernel buffer中,进行进一步处理(如判断SYN是否合理)，然后准备SYN+ACK数据完成 　　后经过TCP/IP协议栈驱动封装IP头,链路层帧头，最终这个数据被写入到send buffer中，并立即被复制到网卡传送出去，同时 　　内核还会在连接未完成队列(syn queue)中为这个连接创建一个新项目，并设置为SYN_RECV状态。 　　接着内核进入睡眠,CPU检查被挂起的进程的时间片是否耗尽，没有就将其调度到CPU上继续执行,否则继续将其它用户空间 　　的进程调度到CPU上执行，当Client收到Server的响应后，回应了ACK报文,Server的网卡收到后，又会继续上面的动作，CPU 　　会再次挂起正在处理的进程,并将数据接收进来，复制到指定的kernel buffer中(注:DMA_Zone也是Kernel buffer的一部分， 　　这里不严格区分它们的区别) 接着CPU会唤醒内核，又它调度TCP/IP协议栈驱动处理收到的数据包,当解封装后，发现是一个 　　ACK报文，并且数据段大小为0，这时内核会去检查未完成连接队列，若找到与该ClientInfo(客户端信息)一致的连接信息，则 　　将该连接从未完成连接列表中删除，然后在已完成连接队列中插入该连接信息,并标记状态为ESTABLISHED，接着将内核中 　　维护的socket set中80监听套接字的状态更为为可读，随后内核让出CPU,进入睡眠，CPU继续将挂起任务载入CPU上执行， 　　若CPU时间片用完,则将其转入内存进入睡眠，继续下一个用户空间的进程，假设此时调度httpd进程到CPU上执行，它依然 　　是发起select系统调用，此时内核被唤醒，httpd被挂起，内核将根据select的要求，返回内核中socket set的全部状态集， 　　然后，内核进入睡眠，CPU将httpd调入CPU上执行，此时select开始遍历获取到的socket set集合，当找到自己监听的 　　socket状态为可读时，它将立即解除阻塞，并调用accept()系统调用，此时内核再次被唤醒，然后根据accept的要求，将 　　已完成连接队列中与自己建立连接的ClientInfo信息取出来,并删除队列中的信息，然后根据监听套接字，生成一个新的 　　专用连接套接字，接着将该套接字注册到内核管理的socket set中，最后将该专用连接套接字返回，接着内核进入睡眠， 　　CPU再次调度httpd进入CPU上执行，httpd获取到专用连接套接字的文件描述符后，将其分配其中一个子进程，由子进程 　　来完成与该用户的后续数据交互，主进程则继续监控监听套接字。 　　若此时httpd的CPU时间片用完了，CPU将会把httpd转入内核睡眠，然后继续其它用户空间的进程；假如此刻Client 　　请求网站主页的数据包到达Server网卡了，网卡依然会采用上面的动作，内核依然会被唤醒，然后内核会调度TCP/IP协议 　　处理数据包,当解封装后，发现这个数据包是ACK报文，并且数据段大于0，此时内核知道这是一个已经完成的连接请求数据包, 　　于是根据请求报文中的 {源IP,源Port,目标IP,目标Port,协议} 去遍历查找socket set，若找到对应的专用socket，则将数据 　　拷贝到socket buffer中,并将专用socket的状态设置为可读，然后，内核进入睡眠，CPU继续挂起的任务，当httpd的子进程 　　被调到到CPU上执行时，它通过select系统调用去检查自己监听的专用套接字时，发现自己关心的套接字为可读，于是立即 　　解除阻塞，调用recvform系统调用，读取数据，此时内核会被唤醒，完成将socket buffer中的数据拷贝到该进程的的内存 　　空间中，然后内核进入睡眠，CPU将httpd子进程调度到CPU上继续执行，httpd子进程读取数据，分析后知道用户要请求 　　网站主页资源，于是再次发起系统调用，获取磁盘中存储的主页数据，此时内核被唤醒，然后内核调度磁盘驱动，若该磁盘 　　上面有DMA芯片，则内核会直接告诉DMA芯片，你将磁盘中指定柱面，指定扇区，指定磁道上的数据复制到指定的DMA_ZOME 　　中指定的内存区中，然后，内核进入睡眠，CPU继续调度其他进程到CPU上执行。 但是若磁盘上没有DMA芯片，那么内核 　　将自行调度磁盘驱动读取磁盘数据，并等待磁盘驱动完成数据从磁盘拷贝到内核kernel buffer中，再这期间kernel将被阻塞， 　　直到数据拷贝完成，然后，内核进入睡眠，CPU再将httpd子进程调度到CPU上执行，若时间片用完，则再将其调度到内存 　　睡眠，否则就继续让httpd子进程执行，假如此时时间片没有耗尽，httpd子进程将会再次发起系统调用，让内核将kernel buffer 　　中的数据拷贝到自己的内存空间中，于是CPU再次将其挂起，内核完成拷贝后，再次进入睡眠，httpd子进程再次被调到 　　CPU上执行，然后httpd子进程开始将数据封装上http首部，构建成响应报文后，再次发起系统调用，让内核将数据复制到 　　send buffer中，此时httpd子进程被挂起，内核开始将进程内存空间中的数据拷贝到内核内存空间中的send buffer中，准备 　　调度TCP/IP协议栈驱动对报文做TCP首部，IP首部，链路层帧头等封装，最终这个数据包构建完成，被内核发往网卡的缓冲区 　　中等待发送，当然若网卡上有DMA芯片，内核依然可让DMA芯片来复制数据,完成发生，自己就去睡眠。若没有就只能自己干。 　　以上描述就是HTTP通信的一个缩影。【文末有两段代码，可合起来看，基本就是类似httpd的代码实现，摘录仅为了方便理解 　　不至于太空洞，而感觉没有依据似的。】 　　注： 　　上面描述了select()系统函数，这是最简单的一种多路复用I/O调用，还有poll和epoll，这两个系统调用，也属于多路复用I/O 　模型，但poll和select基本类似，由于能力有限，对它们之间的区别理解很浅薄，仅知道它们在获取socket set时，似乎select 　是用列表方式，而poll是链表方式，似乎于此有关，导致poll没有最大1024的限制，而select因为在kernel编译时，就设置其 　最大值为1024，即只能同时接收1024个连接，但具体理解不深，若有大牛知道，也希望能分享博文。 </p>
+<h5 id="另外说明"><a href="#另外说明" class="headerlink" title="另外说明:"></a>另外说明:</h5><p>　　1. 助理：即DMA机制 　　　　就拿硬盘来说，CPU需要读磁盘中的一段数据时，它发现磁盘支持DMA，则CPU会授权给DMA允许访问系统总线， 　　并告诉它将磁盘中的那部分数据放到内存中指定的地方，接着CPU就不管了，由DMA来完成数据搬运，并在完成时， 　　向CPU发中断 报告完成。 　　　这里需要注意： 　　　　1. CPU通过32根线才完成了访问4G的内存空间，那DMA要访问内存也需要32根线吗？ 　　　　　　当然不是，DMA的总线是很窄的，因此为了让DMA可访问内存，系统在设计时，就将RAM中低地址中 　　　　　的一段空间预留个DMA使用，它通常是16M；其中RAM的起始区中第一个1M区域是固定给BIOS使用的， 　　　　　因为CPU在制造时，就设定了只要开机，CPU首先去读取RAM中0地址开始的连续的1M区域，来完成 　　　　　处理BIOS映射到里面的指令，实现开机自检。DMA设计时也是会去访问内存中固定的地址区域，实现 　　　　　高效传输。但需要注意的是，每次系统要DMA工作前，都会事先腾出DMA将访问的内存区域。  　　　　2.当前httpd, Nginx等Web服务器都已经有更先进的技术，如sendfile，mmap，这些机制，可让上面繁琐 　　　　磁盘数据拷贝过程变得更加高效， 　　　　这里不展开说明，仅简单说明如下：  　　　　Nginx支持Sendfile方式响应静态网页：Linux中支持 sendfile 和 Sendfile64 　　　　正常情况下：当用户发来请求后,内核收到网卡中断处理数据流，判断为http数据流，告知将该数据流将给监听在 　　　　　　80 Socket的应用程序这时，Nginx的Master进程监听到连接请求，并将该连接请求将给Worker进程，来建立 　　　　　　Http会话响应用户，通过解析请求发现用户请求的是静态网页，接着Worker请求向内核发起I/O请求，内核为 　　　　　　该请求准备Buffer，并向磁盘请求数据,通常由DMA(直接内存访问)控制芯片接收内核请求(请求中通常会包含 　　　　　　让DMA将数据Copy到那段Buffer空间)，并从磁盘中读取数据,并Copy到Buffer中,完成后，向内核发送中断信号, 　　　　　　通知内核数据准备完成，接着内核将数据copy到Nginx的进程内存空间（注:Nginx默认采用epoll,信号驱动I/O 　　　　　　模型）完成后，通知Worker进程Worker进程对数据做处理后，接着又向内核发起请求,要求内核将处理后的 　　　　　　数据封装http头，TCP头, IP头, 并最终发给用户。  　　　Sendfile方式：在这种方式下，当网卡接收到数据流后,发送中断给内核，内核处理后通知网卡将数据发给80 Socket 　　　　　　上监听的应用程序接着，Nginx的Master进程监听到连接请求，并负责向该请求分配Worker进程，来建立 　　　　　　HTTP会话连接，Worker进程分析该请求后，是要请求静态网页数据，接着向内核发起I/O请求，并告知 　　　　　　内核这是请求静态页面的,你直接将数据封装HTTP包响应用户即可，不需在把数据给我了。接着内核向 　　　　　　磁盘请求数据，得到数据后，直接将用户请求的数据封装HTTP头，TCP头，IP头，数据连接层头， 　　　　　　完成后，直接响应用户。  　　对比两种方式不难发现，Sendfile方式更高效，因为它去掉了I/O请求中两次COPY的过程，在高并发的场景中是非常高效的。 　　注意：sendfile：仅支持很小的文件直接在内核封装并响应用户，而sendfile64则支持更大的文件在内核中直接封装并响应用户。 　　【 注意：内核任何时候与进程交换并传递数据时，采用的方式都时Copy，除非指定使用共享内存。】 </p>
 
     
 
@@ -313,7 +293,7 @@
         </li>
         <li>
           <strong>本文链接：</strong>
-          <a href="http://yoursite.com/2020/08/24/坎坷人生/" title="坎坷人生" target="_blank">http://yoursite.com/2020/08/24/坎坷人生/</a>
+          <a href="http://yoursite.com/2020/08/24/TCP & Socket/" title="TCP &amp; Socket" target="_blank">http://yoursite.com/2020/08/24/TCP & Socket/</a>
         </li>
         
         <li>
@@ -380,7 +360,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/08/24/%E5%9D%8E%E5%9D%B7%E4%BA%BA%E7%94%9F/" alt="微信分享二维码"> -->
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/08/24/TCP%20&%20Socket/" alt="微信分享二维码"> -->
     </div>
 </div>
 
@@ -395,18 +375,9 @@
 
 <nav id="article-nav">
   
-    <a href="/2020/08/24/%E5%A4%9A%E7%A7%8D%E6%8E%92%E5%BA%8F%E6%96%B9%E6%B3%95%E6%80%BB%E7%BB%93/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          多种排序方法总结
-        
-      </div>
-    </a>
   
-  
-    <a href="/2020/08/24/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E6%80%BB%E7%BB%93/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">数据类型总结</div>
+    <a href="/2020/08/24/%E6%97%B6%E9%97%B4%E7%A9%BA%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">时间空间复杂度</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -560,19 +531,19 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Java</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Oriented Object Programming</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Machine Learning</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Front-end</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Oriented Object Programming</a>
               </li>
              
               <li class="article-tag-list-item">
