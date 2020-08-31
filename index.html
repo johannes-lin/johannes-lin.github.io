@@ -870,7 +870,7 @@
 
 
   
-    <article id="post-How-to-define-Classes-and-Create-Objects-in-Java" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-Coursera上week2，Scope的问题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -878,7 +878,7 @@
   
     <h1 itemprop="name">
 	
-	  <a class="article-title" href="/2020/07/07/How-to-define-Classes-and-Create-Objects-in-Java/" target="_blank">How to define Classes and Create Objects in Java?</a>
+	  <a class="article-title" href="/2020/07/07/Coursera%E4%B8%8Aweek2%EF%BC%8CScope%E7%9A%84%E9%97%AE%E9%A2%98/" target="_blank">How to define Classes and Create objects in Java?</a>
   
     </h1>
   
@@ -886,7 +886,7 @@
 
   
   
-<a href="/2020/07/07/How-to-define-Classes-and-Create-Objects-in-Java/" class="archive-article-date">
+<a href="/2020/07/07/Coursera%E4%B8%8Aweek2%EF%BC%8CScope%E7%9A%84%E9%97%AE%E9%A2%98/" class="archive-article-date">
         <time datetime="2020-07-07T10:24:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-07</time>
 </a>
 
@@ -899,10 +899,17 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <h4 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h4><p>I am learning Java as a beginner, here I’m gonna introduce how to create classes in Java.</p>
-    
-    <a class="article-more-a" href="/2020/07/07/How-to-define-Classes-and-Create-Objects-in-Java/#more">more >></a>
-    
+    <h5 id="1-Demo-for-This-Video"><a href="#1-Demo-for-This-Video" class="headerlink" title="1. Demo for This Video"></a>1. Demo for This Video</h5><p>In <em>SimpleLocation.java</em>， we have:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">public class SimpleLocation</span><br><span class="line">&#123;</span><br><span class="line"> public double latitude;</span><br><span class="line"> public double longitude;</span><br><span class="line"> </span><br><span class="line"> public SimpleLocation(double latIn, </span><br><span class="line"> double lonIn)</span><br><span class="line"> &#123;</span><br><span class="line"> this.latitude &#x3D; latIn;</span><br><span class="line"> this.longitude &#x3D; lonIn;</span><br><span class="line"> &#125;</span><br><span class="line"> &#x2F;&#x2F; More code here</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>And in <em>LocationTester.java</em>, we have:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">public class LocationTester</span><br><span class="line">&#123;</span><br><span class="line"> public static void main(String[] args)</span><br><span class="line"> &#123;</span><br><span class="line"> SimpleLocation lima &#x3D; </span><br><span class="line"> new SimpleLocation(-12.0, -77.0);</span><br><span class="line"> &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>Firstly, we call <code>lima</code>, which is an object, local variable.</p>
+<p>Because we can only use <code>lima</code> in main function.</p>
+<p>And the next are <code>latIn</code> and <code>lonIn</code>, which are parameter to constructor. Their values can be changed if you want to.</p>
+<p>The third variable are called member variables<code>public doubke latitude</code>. Their scope is the whole class itself. So <code>latitude</code> and <code>logitude</code> are available from any method inside this <code>SimpleLocation</code> class.</p>
+
     
 
     
@@ -958,7 +965,7 @@
 
 
   
-    <article id="post-Coursera上week2，Scope的问题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-How-to-define-Classes-and-Create-Objects-in-Java" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -966,7 +973,7 @@
   
     <h1 itemprop="name">
 	
-	  <a class="article-title" href="/2020/07/07/Coursera%E4%B8%8Aweek2%EF%BC%8CScope%E7%9A%84%E9%97%AE%E9%A2%98/" target="_blank">How to define Classes and Create objects in Java?</a>
+	  <a class="article-title" href="/2020/07/07/How-to-define-Classes-and-Create-Objects-in-Java/" target="_blank">How to define Classes and Create Objects in Java?</a>
   
     </h1>
   
@@ -974,7 +981,7 @@
 
   
   
-<a href="/2020/07/07/Coursera%E4%B8%8Aweek2%EF%BC%8CScope%E7%9A%84%E9%97%AE%E9%A2%98/" class="archive-article-date">
+<a href="/2020/07/07/How-to-define-Classes-and-Create-Objects-in-Java/" class="archive-article-date">
         <time datetime="2020-07-07T10:24:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-07</time>
 </a>
 
@@ -987,17 +994,10 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <h5 id="1-Demo-for-This-Video"><a href="#1-Demo-for-This-Video" class="headerlink" title="1. Demo for This Video"></a>1. Demo for This Video</h5><p>In <em>SimpleLocation.java</em>， we have:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">public class SimpleLocation</span><br><span class="line">&#123;</span><br><span class="line"> public double latitude;</span><br><span class="line"> public double longitude;</span><br><span class="line"> </span><br><span class="line"> public SimpleLocation(double latIn, </span><br><span class="line"> double lonIn)</span><br><span class="line"> &#123;</span><br><span class="line"> this.latitude &#x3D; latIn;</span><br><span class="line"> this.longitude &#x3D; lonIn;</span><br><span class="line"> &#125;</span><br><span class="line"> &#x2F;&#x2F; More code here</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>And in <em>LocationTester.java</em>, we have:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">public class LocationTester</span><br><span class="line">&#123;</span><br><span class="line"> public static void main(String[] args)</span><br><span class="line"> &#123;</span><br><span class="line"> SimpleLocation lima &#x3D; </span><br><span class="line"> new SimpleLocation(-12.0, -77.0);</span><br><span class="line"> &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>Firstly, we call <code>lima</code>, which is an object, local variable.</p>
-<p>Because we can only use <code>lima</code> in main function.</p>
-<p>And the next are <code>latIn</code> and <code>lonIn</code>, which are parameter to constructor. Their values can be changed if you want to.</p>
-<p>The third variable are called member variables<code>public doubke latitude</code>. Their scope is the whole class itself. So <code>latitude</code> and <code>logitude</code> are available from any method inside this <code>SimpleLocation</code> class.</p>
-
+    <h4 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h4><p>I am learning Java as a beginner, here I’m gonna introduce how to create classes in Java.</p>
+    
+    <a class="article-more-a" href="/2020/07/07/How-to-define-Classes-and-Create-Objects-in-Java/#more">more >></a>
+    
     
 
     
@@ -1186,19 +1186,19 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Basic Algorithms</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">General Tech</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Java</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Oriented Object Programming</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Basic Algorithms</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">General Tech</a>
               </li>
              
               <li class="article-tag-list-item">
