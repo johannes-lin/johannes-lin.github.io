@@ -392,52 +392,9 @@
     
     <h3 id="How-to-insert-mathematical-formula-in-markdown"><a href="#How-to-insert-mathematical-formula-in-markdown" class="headerlink" title="How to insert mathematical formula in markdown"></a>How to insert mathematical formula in markdown</h3><p>To insert mathematical formulas in a Markdown file, we usually do as follow:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$Formula$ or $$Formulas$$</span><br></pre></td></tr></table></figure>
-
-
-
-<h4 id="To-be-specific"><a href="#To-be-specific" class="headerlink" title="To be specific"></a>To be specific</h4><h5 id="Super-Sub-script"><a href="#Super-Sub-script" class="headerlink" title="Super/Sub-script"></a>Super/Sub-script</h5><p><code>^</code> indicates superscript, and <code>_</code> indicates  subscript.</p>
-<p>If the contents of the superscript and subscript are more than one character, you can use <code>{}</code> to enclose the contents as a whole.</p>
-<p>E.g.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$x &#x3D; a_1^n + a_&#123;23&#125;^n + a_&#123;4&#125;^n$$</span><br></pre></td></tr></table></figure>
-
-<p>​                                                                                $$x = a_1^n + a_{23}^n + a_{4}^n$$</p>
-<h5 id="Fractionf"><a href="#Fractionf" class="headerlink" title="Fractionf"></a>Fractionf</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$\frac&#123;1&#125;&#123;3&#125; and \cfrac&#123;1&#125;&#123;3&#125;$$</span><br></pre></td></tr></table></figure>
-
-<p>$$\frac{1}{3} and \cfrac{1}{3}$$</p>
-<h5 id="Add"><a href="#Add" class="headerlink" title="Add"></a>Add</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$\frac&#123;d&#125;&#123;dx&#125;e^&#123;ax&#125;&#x3D;ae^&#123;ax&#125;\quad \sum_&#123;i&#x3D;1&#125;^&#123;n&#125;&#123;(X_i - \overline&#123;X&#125;)^2&#125;$$</span><br></pre></td></tr></table></figure>
-
-<p>$$\frac{d}{dx}e^{ax}=ae^{ax}\quad \sum_{i=1}^{n}{(X_i - \overline{X})^2}$$</p>
-<h5 id="Derivation"><a href="#Derivation" class="headerlink" title="Derivation"></a>Derivation</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$\frac&#123;\partial^2 u&#125;&#123;\partial z^2&#125;$$</span><br></pre></td></tr></table></figure>
-
-<p>$$\frac{\partial^2 u}{\partial z^2}$$</p>
-<h5 id="Integration"><a href="#Integration" class="headerlink" title="Integration"></a>Integration</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$\int ^&#123;10&#125;_1 x^2 dx$$</span><br></pre></td></tr></table></figure>
-
-<p>$$\int ^{10}_1 x^2 dx$$</p>
-<h5 id="Continuously-Multiply"><a href="#Continuously-Multiply" class="headerlink" title="Continuously Multiply"></a>Continuously Multiply</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$\prod_&#123;n&#x3D;1&#125;^&#123;100&#125;2^n$$</span><br></pre></td></tr></table></figure>
-
-<p>$$\prod_{n=1}^{100}2^n$$</p>
-<h5 id="limitation"><a href="#limitation" class="headerlink" title="limitation"></a>limitation</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$\lim_&#123;n\rightarrow+\infty&#125; n^2$$</span><br></pre></td></tr></table></figure>
-
-<p>$$\lim_{n\rightarrow+\infty} n^2$$</p>
-<h5 id="Square"><a href="#Square" class="headerlink" title="Square"></a>Square</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$\sqrt[3]&#123;X&#125; And \sqrt&#123;1 - x&#125;$$</span><br></pre></td></tr></table></figure>
-
-<p>$$\sqrt[3]{X} 和 \sqrt{1 - x}$$</p>
-<h5 id="Trigonometric-Functions"><a href="#Trigonometric-Functions" class="headerlink" title="Trigonometric Functions"></a>Trigonometric Functions</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$\bot \quad \angle \quad \sin(\pi) \quad \cos \quad \tan $$</span><br></pre></td></tr></table></figure>
-
-<p>$$\bot \quad \angle \quad \sin(\pi) \quad \cos \quad \tan $$</p>
-<h5 id="Logarithmic-Function"><a href="#Logarithmic-Function" class="headerlink" title="Logarithmic Function"></a>Logarithmic Function</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$\ln15 \quad \log_210  \quad \lg7$$</span><br></pre></td></tr></table></figure>
-
-<p>$$\ln15 \quad \log_210  \quad \lg7$$</p>
-<h5 id="Relational-Operators"><a href="#Relational-Operators" class="headerlink" title="Relational Operators"></a>Relational Operators</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$\pm \times \div \sum \prod \neq \leq \geq$$</span><br></pre></td></tr></table></figure>
-
-<p>$$+ - \pm \times \div \sum \prod \neq \leq \geq$$</p>
-<h5 id="Matrices"><a href="#Matrices" class="headerlink" title="Matrices"></a>Matrices</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">$$</span><br><span class="line">\begin&#123;bmatrix&#125;</span><br><span class="line">   1 &amp; 2 &amp; 3 \\</span><br><span class="line">   4 &amp; 5 &amp; 6 \\</span><br><span class="line">   7 &amp; 8 &amp; 9</span><br><span class="line">  \end&#123;bmatrix&#125; \tag&#123;1&#125;</span><br><span class="line">$$</span><br><span class="line"></span><br><span class="line">$$</span><br><span class="line"> \begin&#123;Bmatrix&#125;</span><br><span class="line">   1 &amp; 2 &amp; 3 \\</span><br><span class="line">   4 &amp; 5 &amp; 6 \\</span><br><span class="line">   7 &amp; 8 &amp; 9</span><br><span class="line">  \end&#123;Bmatrix&#125; \tag&#123;2&#125;</span><br><span class="line">$$</span><br><span class="line"></span><br><span class="line">$$</span><br><span class="line">\left[</span><br><span class="line">\begin&#123;matrix&#125;</span><br><span class="line"> 1      &amp; 2      &amp; \cdots &amp; 4      \\</span><br><span class="line"> 7      &amp; 6      &amp; \cdots &amp; 5      \\</span><br><span class="line"> \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\</span><br><span class="line"> 8      &amp; 9      &amp; \cdots &amp; 0      \\</span><br><span class="line">\end&#123;matrix&#125;</span><br><span class="line">\right] \tag&#123;3&#125;</span><br><span class="line">$$</span><br><span class="line"></span><br><span class="line">$$</span><br><span class="line">\left[</span><br><span class="line">    \begin&#123;array&#125;&#123;cc|c&#125;</span><br><span class="line">      1 &amp; 2 &amp; 3 \\</span><br><span class="line">      4 &amp; 5 &amp; 6</span><br><span class="line">    \end&#123;array&#125;</span><br><span class="line">\right] \tag&#123;4&#125;</span><br><span class="line">$$</span><br></pre></td></tr></table></figure>
-
-<p>$$<br>\begin{bmatrix}<br>   1 &amp; 2 &amp; 3 \<br>   4 &amp; 5 &amp; 6 \<br>   7 &amp; 8 &amp; 9<br>  \end{bmatrix} \tag{1}<br>$$</p>
-<p>$$<br> \begin{Bmatrix}<br>   1 &amp; 2 &amp; 3 \<br>   4 &amp; 5 &amp; 6 \<br>   7 &amp; 8 &amp; 9<br>  \end{Bmatrix} \tag{2}<br>$$</p>
-<p>$$<br>\left[<br>\begin{matrix}<br> 1      &amp; 2      &amp; \cdots &amp; 4      \<br> 7      &amp; 6      &amp; \cdots &amp; 5      \<br> \vdots &amp; \vdots &amp; \ddots &amp; \vdots \<br> 8      &amp; 9      &amp; \cdots &amp; 0      \<br>\end{matrix}<br>\right] \tag{3}<br>$$</p>
-<p>$$<br>\left[<br>    \begin{array}{cc|c}<br>      1 &amp; 2 &amp; 3 \<br>      4 &amp; 5 &amp; 6<br>    \end{array}<br>\right] \tag{4}<br>$$</p>
-
+    
+    <a class="article-more-a" href="/2020/08/31/Mathematical-Formulas-in-Markdown/#more">more >></a>
+    
     
 
     
@@ -518,17 +475,10 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <a id="more"></a>
-
-<h2 id="直接插入排序"><a href="#直接插入排序" class="headerlink" title="直接插入排序"></a>直接插入排序</h2><h5 id="时间复杂度"><a href="#时间复杂度" class="headerlink" title="时间复杂度"></a>时间复杂度</h5><p>O(n²)</p>
-<h5 id="最坏情况："><a href="#最坏情况：" class="headerlink" title="最坏情况："></a>最坏情况：</h5><p>​        当序列中记录按关键字逆序排序时，总比较次数达到最大值：(n + 2)(n - 1)/2</p>
-<h2 id="希尔排序"><a href="#希尔排序" class="headerlink" title="希尔排序"></a>希尔排序</h2><h5 id="时间复杂度-1"><a href="#时间复杂度-1" class="headerlink" title="时间复杂度"></a>时间复杂度</h5><p>？？？</p>
-<h2 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h2><h5 id="时间复杂度-2"><a href="#时间复杂度-2" class="headerlink" title="时间复杂度"></a>时间复杂度</h5><p>O(logn)</p>
-<h5 id="最坏情况：-1"><a href="#最坏情况：-1" class="headerlink" title="最坏情况："></a>最坏情况：</h5><p>若每趟排序之后，枢轴位置均偏向子序列的一端。时间复杂度为: O(n)</p>
-<h2 id="堆排序"><a href="#堆排序" class="headerlink" title="堆排序"></a>堆排序</h2><h5 id="时间复杂度："><a href="#时间复杂度：" class="headerlink" title="时间复杂度："></a>时间复杂度：</h5><p>O(nlogn)</p>
-<h5 id="最坏情况：-2"><a href="#最坏情况：-2" class="headerlink" title="最坏情况："></a>最坏情况：</h5><p>​        n个结点的完全二叉树深度为 log2n + 1 ，则调整建新堆时调用HeapAdjust过程 n - 1次，总共进行的比对次数不超过 2n(log2n)，</p>
-<p>​       因此，堆排序在最坏情况下，其时间复杂度也为O(nlogn)</p>
-
+    <h5 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h5><p>Here I list some common sorting methods.</p>
+    
+    <a class="article-more-a" href="/2020/08/31/%E5%A4%9A%E7%A7%8D%E6%8E%92%E5%BA%8F%E6%96%B9%E5%BC%8F%E6%80%BB%E7%BB%93/#more">more >></a>
+    
     
 
     
@@ -945,14 +895,11 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <p>就像理解一个超难的问题（Conception）：需要不断地理解其中的unfamiliar terms </p>
+    <h4 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h4><p>就像理解一个超难的问题（Conception）：需要不断地理解其中的unfamiliar terms </p>
 <p>在理解的过程中，再不断地回看那个超难的问题，慢慢地就会理解了。</p>
-<p>今天又更加确切地理解了两个terms：<code>Backpropagation</code> and <code>Activation Functions</code></p>
-<h2 id="1-Backpropagation"><a href="#1-Backpropagation" class="headerlink" title="1. Backpropagation"></a>1. Backpropagation</h2><p><code>Backpropagation</code>:</p>
-<p>从输出通过链式求导直接推到输入，修正weight（w1, w2, … wn）</p>
-<h2 id="2-Activation-Functions"><a href="#2-Activation-Functions" class="headerlink" title="2. Activation Functions"></a>2. Activation Functions</h2><p>一个<code>y = w1x1 + w2x2 + bx</code>的函数，是linear的。cannot fit non-linear problems well.</p>
-<p>但是，通过<code>Activation Functions</code>的扭曲空间之后，就可以fit non-linear models了</p>
-
+    
+    <a class="article-more-a" href="/2020/07/23/Understanding-Some-Conceptions-in-ML/#more">more >></a>
+    
     
 
     
@@ -1004,7 +951,7 @@
 
 
   
-    <article id="post-using-conda" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-public-private" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -1012,7 +959,7 @@
   
     <h1 itemprop="name">
 	
-	  <a class="article-title" href="/2020/07/20/using-conda/" target="_blank">using-conda</a>
+	  <a class="article-title" href="/2020/07/07/public-private/" target="_blank">public &amp; private</a>
   
     </h1>
   
@@ -1020,8 +967,8 @@
 
   
   
-<a href="/2020/07/20/using-conda/" class="archive-article-date">
-        <time datetime="2020-07-20T14:49:58.480Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-20</time>
+<a href="/2020/07/07/public-private/" class="archive-article-date">
+        <time datetime="2020-07-07T11:18:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-07</time>
 </a>
 
   
@@ -1033,6 +980,10 @@
   
   <div class="article-entry" itemprop="articleBody">
     
+    <h4 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h4><p>Public &amp; Private</p>
+<h3 id="1-DEFINITIONS"><a href="#1-DEFINITIONS" class="headerlink" title="1. DEFINITIONS"></a>1. DEFINITIONS</h3>
+    
+    <a class="article-more-a" href="/2020/07/07/public-private/#more">more >></a>
     
     
 
@@ -1044,6 +995,21 @@
   <div class="article-info article-info-index">
     
     
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Oriented Object Programming</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
     
 
     
@@ -1199,10 +1165,6 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Machine Learning</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Front-end</a>
               </li>
              
@@ -1215,11 +1177,15 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Basic Algorithms</a>
+                <a href="javascript:void(0)" class="js-tag color3">General Tech</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">General Tech</a>
+                <a href="javascript:void(0)" class="js-tag color2">Machine Learning</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Basic Algorithms</a>
               </li>
              
               <li class="article-tag-list-item">
