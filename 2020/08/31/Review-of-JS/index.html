@@ -6,20 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>How to define Classes and Create objects in Java? | Johannes&#39; Blog</title>
+  <title>Review of JS | Johannes&#39; Blog</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="1. BasicallyIn SimpleLocation.java , we have a few lines of codes as follow: 1public class SimpleLocation  Firstly, when creating a class, you have to put it in a file that has the same name as the cl">
-<meta property="og:type" content="website">
-<meta property="og:title" content="How to define Classes and Create objects in Java?">
-<meta property="og:url" content="http://yoursite.com/general_tech/How-to-define-Classes-and-Create-objects-in-Java.html">
+  <meta name="description" content="Objects, functions and closures in JS.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Review of JS">
+<meta property="og:url" content="http://yoursite.com/2020/08/31/Review-of-JS/index.html">
 <meta property="og:site_name" content="Johannes&#39; Blog">
-<meta property="og:description" content="1. BasicallyIn SimpleLocation.java , we have a few lines of codes as follow: 1public class SimpleLocation  Firstly, when creating a class, you have to put it in a file that has the same name as the cl">
+<meta property="og:description" content="Objects, functions and closures in JS.">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-07-07T10:24:22.000Z">
-<meta property="article:modified_time" content="2020-07-07T17:25:26.036Z">
+<meta property="article:published_time" content="2020-08-31T14:58:31.000Z">
+<meta property="article:modified_time" content="2020-08-31T15:00:12.210Z">
 <meta property="article:author" content="Johannes">
+<meta property="article:tag" content="JavaScript">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Johannes&#39; Blog" type="application/atom+xml">
@@ -189,14 +190,14 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="page-" class="article article-type-page " itemscope itemprop="blogPost">
+            <article id="post-Review-of-JS" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
   
   
     <h1 class="article-title" itemprop="name">
-      How to define Classes and Create objects in Java?
+      Review of JS
     </h1>
   
 
@@ -208,8 +209,8 @@
               <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
         </span>
 
-<a href="/general_tech/How-to-define-Classes-and-Create-objects-in-Java.html" class="archive-article-date">
-        <time datetime="2020-07-07T10:24:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-07</time>
+<a href="/2020/08/31/Review-of-JS/" class="archive-article-date">
+        <time datetime="2020-08-31T14:58:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-31</time>
 </a>
 
   
@@ -222,7 +223,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">499字</span>
+      <span class="post-count">2.1k字</span>
     </span>
   </span>
 
@@ -231,7 +232,7 @@
     <span class="post-meta-item-icon">
       <i class="icon-book icon"></i>
       <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">3分</span>
+      <span class="post-count">8分</span>
     </span>
   </span>
 </div>
@@ -242,44 +243,111 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <h2 id="1-Basically"><a href="#1-Basically" class="headerlink" title="1. Basically"></a>1. Basically</h2><p>In <code>SimpleLocation.java</code> , we have a few lines of codes as follow:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">public class SimpleLocation</span><br></pre></td></tr></table></figure>
+    <p>Objects, functions and closures in JS.</p>
+<a id="more"></a>
 
-<p>Firstly, when creating a class, you have to put it in a file that has the same name as the class, and that’s if the class is public, which our class is.</p>
-<p>And then, we see member variables.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">public class SimpleLocation</span><br><span class="line">&#123;</span><br><span class="line"> public double latitude;</span><br><span class="line"> public double longitude;</span><br></pre></td></tr></table></figure>
+<h1 id="Objects-in-JavaScript"><a href="#Objects-in-JavaScript" class="headerlink" title="Objects in JavaScript"></a>Objects in JavaScript</h1><p>JavaScript 中的对象，Object， 不难联想 JavaScript 中的对象与下面这些概念类似：</p>
+<ul>
+<li>Python 中的字典（Dictionary）</li>
+<li>Perl 和 Ruby 中的散列/哈希（Hash）</li>
+<li>C/C++ 中的散列表（Hash table）</li>
+<li>Java 中的散列映射表（HashMap）</li>
+<li>PHP 中的关联数组（Associative array）</li>
+</ul>
+<p>这样的数据结构设计合理，能应付各类复杂需求，所以被各类编程语言广泛采用。</p>
+<h3 id="全是objects"><a href="#全是objects" class="headerlink" title="全是objects"></a>全是objects</h3><p>正因为 JavaScript 中的一切（除了核心类型，core object）都是对象，所以 JavaScript 程序必然与大量的散列表查找操作有着千丝万缕的联系，而散列表擅长的正是高速查找。 </p>
+<h3 id="创建对象"><a href="#创建对象" class="headerlink" title="创建对象"></a>创建对象</h3><p>有两种简单方法可以创建一个空对象：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = <span class="keyword">new</span> <span class="built_in">Object</span>();</span><br></pre></td></tr></table></figure>
 
-<p>These <strong>member variables</strong> are variables that exits throughout the class. They are defined inside a class definition, but out of definition of any method in the class:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">public SimpleLocation(double lat, double lon) &#x2F;&#x2F; this is what we call &quot;method&quot; in the class.</span><br><span class="line"> &#123;</span><br><span class="line"> this.latitude &#x3D; lat;</span><br><span class="line"> this.longitude &#x3D; lon;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+<p>和：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;&#125;;</span><br></pre></td></tr></table></figure>
 
-<p>As above, this is what we call “method” in the class, which create a new object.</p>
-<p>Also, you can call it Constructor.</p>
-<p>A constructor does not have a return type.</p>
-<p><code>public SimpleLocation</code> : you can see it is what a constructor uses.  </p>
-<p>Then, what we have is another method:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">public double distance(SimpleLocation other)</span><br><span class="line">&#123;</span><br><span class="line"> return getDist(this.latitude, this.longitude,</span><br><span class="line"> other.latitude, other.longitude); </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这两种方法在语义上是相同的。第二种更方便的方法叫作“对象字面量（object literal）”法。这种也是 JSON 格式的核心语法，一般我们优先选择第二种方法。</p>
+<p>下面的例子创建了一个对象原型<code>Fuck</code>，和这个原型的实例，<strong>Laozi</strong>。 </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 对象原型。此处为创建对象</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Fuck</span>(<span class="params">name, age</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = name;</span><br><span class="line">    <span class="keyword">this</span>.age = age;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 对象实例</span></span><br><span class="line"><span class="keyword">var</span> Laozi = <span class="keyword">new</span> Fuck(<span class="string">"Urdad"</span>, <span class="number">22</span>);</span><br></pre></td></tr></table></figure>
 
-<p>Using this method, we can get the distance between two objects.</p>
-<p>You might be curious about <code>this</code>. Now, let me introduce it to you:</p>
-<p>&lt;color = “red”&gt;<strong>*”this” refers to the object that calls the method. In this case, “this” refers to the method “distance”.*</strong></p>
-<p><em>“When used in functions, “this” keyword refers to the calling object. Every (or most) time you refer to the calling object’s property inside a method, you can use “this” keyword. For example, in the constructor function, you can write this.variableName since you’re referring to the object’s property. It helps since instead of writing the object’s name each time, you can just conveniently write “this” instead. It also slightly improves code’s efficiency unlike referencing the variable without “this” keyword. “</em>  —— Online Resource</p>
-<h2 id="2-Something-to-Preview"><a href="#2-Something-to-Preview" class="headerlink" title="2. Something to Preview"></a>2. Something to Preview</h2><p>And now, How to create new variables?<br><strong><em>answer:</em></strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ClassName objName &#x3D; new ClassName(xxx,xxx);</span><br></pre></td></tr></table></figure>
+<p>After creating the object <code>Fuck</code>, its property can be 赋值&amp;访问 by methods as follow:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">obj.name = <span class="string">"Simon"</span></span><br><span class="line"><span class="keyword">var</span> name = obj.name;</span><br></pre></td></tr></table></figure>
 
-<p>The above codes go into <code>ClassName</code>, and calls the constructor.</p>
-<h2 id="3-Next-Step"><a href="#3-Next-Step" class="headerlink" title="3. Next Step"></a>3. Next Step</h2><p>Now let’s define in a totally different class. Because every object has to be created in a class in Java. </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">public class LocationTester</span><br><span class="line">&#123;</span><br><span class="line"> public static void main(String[] args)</span><br><span class="line"> &#123;</span><br><span class="line"> SimpleLocation ucsd &#x3D; </span><br><span class="line"> new SimpleLocation(32.9, -117.2);</span><br><span class="line"> SimpleLocation lima &#x3D;</span><br><span class="line"> new SimpleLocation(-12.0, -77.0);</span><br><span class="line"> System.out.println(ucsd.distance(lima));</span><br><span class="line"> &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>和：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// bracket notation</span></span><br><span class="line">obj[<span class="string">'name'</span>] = <span class="string">'Simon'</span>;</span><br><span class="line"><span class="keyword">var</span> name = obj[<span class="string">'name'</span>];</span><br><span class="line"><span class="comment">// can use a variable to define a key</span></span><br><span class="line"><span class="keyword">var</span> user = prompt(<span class="string">'what is your key?'</span>)</span><br><span class="line">obj[user] = prompt(<span class="string">'what is its value?'</span>)</span><br></pre></td></tr></table></figure>
 
-<p>After creating 2 new objects(ucsd and lima) in main, we use the <code>distance</code> method to help us get distance between the 2 objects.</p>
-<p>And then, as you see in the last line before curly bracket, we print <code>ucsd.distance(lima)</code>.</p>
-<p><strong><em>EXPLAINATION:</em></strong> </p>
-<p>Here, we have to go back to the method <code>distance</code>:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">public double distance(SimpleLocation other)</span><br></pre></td></tr></table></figure>
+<p>这两种方法在语义上也是相同的。第二种方法的<u>优点</u>在于<strong>属性的名称被看作一个字符串</strong>，这就意味着它可以在运行时被计算，<u>缺点</u>在于<strong>这样的代码有可能无法在后期被解释器优化</strong>。它也可以被用来访问某些以<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Lexical_grammar#Keywords" target="_blank" rel="noopener">预留关键字</a>作为名称的属性的值：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">obj.for &#x3D; &quot;Simon&quot;; &#x2F;&#x2F; 语法错误，因为 for 是一个预留关键字</span><br><span class="line">obj[&quot;for&quot;] &#x3D; &quot;Simon&quot;; &#x2F;&#x2F; 工作正常</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"> public double distance(SimpleLocation other)</span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line"> return getDist(this.latitude, this.longitude,</span><br><span class="line"></span><br><span class="line"> other.latitude, other.longitude); </span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>Lima is an <em>Argument of Function</em>, which is stored in “other” parameter.</p>
-<p>And <code>this</code> here refers to ucsd.</p>
+
+<h1 id="Array"><a href="#Array" class="headerlink" title="Array"></a>Array</h1><p>除了熟知的方法外，还有以下几种遍历数组各元素的方法：</p>
+<h3 id="Method1"><a href="#Method1" class="headerlink" title="Method1"></a>Method1</h3><p>ES2015 引入了更加简洁的 <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...of" target="_blank" rel="noopener"><code>for</code>…<code>of</code></a> 循环，可以用它来遍历可迭代对象，例如数组：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">for (const currentValue of a) &#123;</span><br><span class="line">  &#x2F;&#x2F; Do something with currentValue</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Method2"><a href="#Method2" class="headerlink" title="Method2"></a>Method2</h3><p>遍历数组的另一种方法是使用 <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Statements/for...in" target="_blank" rel="noopener"><code>for...in</code></a> 循环， 然而这并不是遍历数组元素而是数组的索引。注意，如果哪个家伙直接向 <code>Array.prototype</code> 添加了新的属性，使用这样的循环这些属性也同样会被遍历。所以并不推荐使用这种方法遍历数组：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">for (var i in a) &#123;</span><br><span class="line">  &#x2F;&#x2F; Do something with a[i]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Method3"><a href="#Method3" class="headerlink" title="Method3"></a>Method3</h3><p>ECMAScript 5 增加了另一个遍历数组的方法，<code>forEach()</code>：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[&quot;dog&quot;, &quot;cat&quot;, &quot;hen&quot;].forEach(function(currentValue, index, array) &#123;</span><br><span class="line">  &#x2F;&#x2F; Do something with currentValue or array[index]</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h3 id="追加元素"><a href="#追加元素" class="headerlink" title="追加元素"></a>追加元素</h3><p>如果想在数组后追加元素，只需要：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a.push(item);</span><br></pre></td></tr></table></figure>
+
+<p>除了 <code>forEach()</code> 和 <code>push()</code>，Array（数组）类还自带了许多方法。</p>
+<h1 id="Function"><a href="#Function" class="headerlink" title="Function"></a>Function</h1><p><strong><em>学习 JavaScript 最重要的就是要理解对象和函数两个部分。</em></strong> </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name, age</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = name;</span><br><span class="line">    <span class="keyword">this</span>.age = age;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> You = <span class="keyword">new</span> Person(<span class="string">"you"</span>, <span class="number">22</span>);</span><br><span class="line"><span class="keyword">var</span> name = You.name;</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h1><p>闭包是 JavaScript 中最强大的抽象概念之一——但它也是最容易造成困惑的。它究竟是做什么的呢？</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">makeAdder</span>(<span class="params">a</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params">b</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a + b;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> add5 = makeAdder(<span class="number">5</span>);</span><br><span class="line"><span class="keyword">var</span> add20 = makeAdder(<span class="number">20</span>);</span><br><span class="line">add5(<span class="number">6</span>); <span class="comment">// ?</span></span><br><span class="line">add20(<span class="number">7</span>); <span class="comment">// ?</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="say-myself-about-above"><a href="#say-myself-about-above" class="headerlink" title="say myself about above"></a>say myself about above</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> add5 = makeAdder(<span class="number">5</span>); <span class="comment">// 先传进个5</span></span><br></pre></td></tr></table></figure>
+
+<p>先传入一个5</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> add20 = makeAdder(<span class="number">20</span>); <span class="comment">// 再传20</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="官方解释"><a href="#官方解释" class="headerlink" title="官方解释"></a>官方解释</h2><p><code>makeAdder</code> 这个名字本身，便应该能说明函数是用来做什么的：它会用一个参数来创建一个新的“adder”函数，再用另一个参数来调用被创建的函数时，<code>makeAdder</code> 会将一前一后两个参数相加。</p>
+<p>这里发生的事情和前面介绍过的内嵌函数十分相似：一个函数被定义在了另外一个函数的内部，内部函数可以访问外部函数的变量。<strong><u>唯一的不同是，外部函数已经返回了，那么常识告诉我们局部变量“应该”不再存在。但是它们却仍然存在</u></strong>——否则 <code>adder</code> 函数将不能工作。也就是说，这里存在 <code>makeAdder</code> 的局部变量的两个不同的“副本”——一个是 <code>a</code> 等于 5，另一个是 <code>a</code> 等于 20。那些函数的运行结果就如下所示：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">x(<span class="number">6</span>); <span class="comment">// 返回 11</span></span><br><span class="line">y(<span class="number">7</span>); <span class="comment">// 返回 27</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="sth-great-happens"><a href="#sth-great-happens" class="headerlink" title="sth great happens"></a>sth great happens</h4><p>下面来说说，到底发生了什么了不得的事情。<strong>每当 JavaScript 执行一个函数时，都会创建一个作用域对象（scope object），用来保存在这个函数中创建的局部变量</strong>。它使用一切被传入函数的变量进行初始化（初始化后，它包含一切被传入函数的变量）。这与那些保存的所有全局变量和函数的全局对象（global object）相类似，但仍有一些很重要的区别：</p>
+<h5 id="第一，"><a href="#第一，" class="headerlink" title="第一，"></a>第一，</h5><p>每次函数被执行的时候，就会创建一个新的，特定的作用域对象；</p>
+<h5 id="第二，"><a href="#第二，" class="headerlink" title="第二，"></a>第二，</h5><p>与全局对象（如浏览器的 <code>window</code> 对象）不同的是，你不能从 JavaScript 代码中直接访问作用域对象，也没有可以遍历当前作用域对象中的属性的方法。</p>
+<h5 id="所以，"><a href="#所以，" class="headerlink" title="所以，"></a>所以，</h5><p>当调用 <code>makeAdder</code> 时，解释器创建了一个作用域对象，它带有一个属性：<code>a</code>，这个属性被当作参数传入 <code>makeAdder</code> 函数。然后 <code>makeAdder</code> 返回一个新创建的函数（暂记为 <code>adder</code>）。通常，JavaScript 的垃圾回收器会在这时回收 <code>makeAdder</code> 创建的作用域对象（暂记为 <code>b</code>），但是，<code>makeAdder</code> 的返回值，新函数 <code>adder</code>，拥有一个指向作用域对象 <code>b</code> 的引用。最终，作用域对象 <code>b</code> 不会被垃圾回收器回收，直到没有任何引用指向新函数 <code>adder</code>。</p>
+<p>作用域对象组成了一个名为<strong><em>作用域链</em></strong>（scope chain）的（调用）链。它和 JavaScript 的对象系统使用的<strong><em>原型</em></strong>（prototype）链相类似。</p>
+<p>一个<strong>闭包</strong>，就是 一个函数 与其 被创建时所带有的作用域对象 的组合。</p>
+<h5 id="闭包允许你保存状态"><a href="#闭包允许你保存状态" class="headerlink" title="闭包允许你保存状态"></a>闭包允许你保存状态</h5><p>——所以，它们可以用来代替对象。<a href="http://stackoverflow.com/questions/111102/how-do-javascript-closures-work" target="_blank" rel="noopener">这个 StackOverflow 帖子里</a>有一些关于闭包的详细介绍。</p>
+<h2 id="Some-Examples"><a href="#Some-Examples" class="headerlink" title="Some Examples"></a>Some Examples</h2><p>A closure is a pairing of:</p>
+<ol>
+<li>A function, and</li>
+<li>A reference to that function’s outer scope (lexical environment)</li>
+</ol>
+<p>A lexical environment is part of every execution context (stack frame), and is a map between identifiers (ie. local variable names) and values.</p>
+<h4 id="Functional-Programming"><a href="#Functional-Programming" class="headerlink" title="Functional Programming"></a>Functional Programming</h4><p>In the following code, function <code>inner</code> closes over both <code>fn</code> and <code>args</code>.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">curry</span>(<span class="params">fn</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> args = []</span><br><span class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> <span class="title">inner</span>(<span class="params">arg</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(args.length === fn.length) <span class="keyword">return</span> fn(...args)</span><br><span class="line">    args.push(arg) <span class="comment">// 入栈</span></span><br><span class="line">    <span class="keyword">return</span> inner <span class="comment">// 入完栈后，返回内部函数inner</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params">a, b</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> a + b</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> curriedAdd = curry(add)</span><br><span class="line"><span class="built_in">console</span>.log(curriedAdd(<span class="number">2</span>)(<span class="number">3</span>)()) <span class="comment">// 5</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="最后一点："><a href="#最后一点：" class="headerlink" title="最后一点："></a>最后一点：</h2><ul>
+<li><p>每当在JavaScript中声明函数时，都会创建一个闭包。</p>
+</li>
+<li><p><code>function</code>从另一个函数内部返回a 是闭包的经典示例，因为外部函数内部的状态对于返回的内部函数隐式可用，即使在外部函数完成执行之后也是如此。</p>
+</li>
+<li><p>每当<code>eval()</code>在函数内部使用时，都会使用闭包。您<code>eval</code>可以在文本中引用函数的局部变量，在非严格模式下，甚至可以使用来创建新的局部变量<code>eval(&#39;var foo = …&#39;)</code>。</p>
+</li>
+<li><p>当您<code>new Function(…)</code>在<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" target="_blank" rel="noopener">函数</a>内部使用（<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" target="_blank" rel="noopener">函数构造函数</a>）时，它不会关闭其词法环境：而是关闭全局上下文。新函数不能引用外部函数的局部变量。</p>
+</li>
+<li><p>A closure in JavaScript is like keeping a reference (<strong>NOT</strong> a copy) to the scope at the point of function declaration, which in turn keeps a reference to its outer scope, and so on, all the way to the global object at the top of the scope chain(范围链).</p>
+</li>
+<li><p>声明函数时创建一个闭包。在调用函数时，此闭包用于配置执行上下文。</p>
+</li>
+<li><p>每次调用函数时都会创建一组新的局部变量。</p>
+</li>
+</ul>
+<h2 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h2><ul>
+<li>Douglas Crockford 使用闭包为对象模拟了对象的<a href="http://www.crockford.com/javascript/private.html" target="_blank" rel="noopener">私有属性和私有方法</a>。</li>
+<li>如果不小心，闭包将如何<a href="https://www.codeproject.com/Articles/12231/Memory-Leakage-in-Internet-Explorer-revisited" target="_blank" rel="noopener">导致IE中的内存泄漏的</a>绝佳解释。</li>
+</ul>
 
     
 
@@ -316,7 +384,7 @@
         </li>
         <li>
           <strong>本文链接：</strong>
-          <a href="http://yoursite.com/general_tech/How-to-define-Classes-and-Create-objects-in-Java.html" title="How to define Classes and Create objects in Java?" target="_blank">http://yoursite.com/general_tech/How-to-define-Classes-and-Create-objects-in-Java.html</a>
+          <a href="http://yoursite.com/2020/08/31/Review-of-JS/" title="Review of JS" target="_blank">http://yoursite.com/2020/08/31/Review-of-JS/</a>
         </li>
         
         <li>
@@ -333,6 +401,17 @@
   <div class="article-info article-info-index">
     
     
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
     
 
     
@@ -383,7 +462,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/general_tech/How-to-define-Classes-and-Create-objects-in-Java.html" alt="微信分享二维码"> -->
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/08/31/Review-of-JS/" alt="微信分享二维码"> -->
     </div>
 </div>
 
@@ -395,6 +474,16 @@
   </div>
 </article>
 
+
+<nav id="article-nav">
+  
+  
+    <a href="/2020/08/31/Linked-List/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Linked List</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
 
 
 <aside class="wrap-side-operation">
@@ -464,7 +553,7 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
