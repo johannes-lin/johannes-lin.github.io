@@ -6,21 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>using conda! | Johannes&#39; Blog</title>
+  <title>数据类型总结 | Johannes&#39; Blog</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="Using CondaI. BACKGROUND:As I am doing some research in DS, using ML. Hence, I urgently  need something to manage my environments.">
+  <meta name="description" content="AbstractData types in 16,32,64 bit compiler.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="using conda!">
-<meta property="og:url" content="http://yoursite.com/2020/07/06/using-conda/index.html">
+<meta property="og:title" content="数据类型总结">
+<meta property="og:url" content="http://yoursite.com/2020/08/31/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E6%80%BB%E7%BB%93/index.html">
 <meta property="og:site_name" content="Johannes&#39; Blog">
-<meta property="og:description" content="Using CondaI. BACKGROUND:As I am doing some research in DS, using ML. Hence, I urgently  need something to manage my environments.">
+<meta property="og:description" content="AbstractData types in 16,32,64 bit compiler.">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-07-06T10:33:27.000Z">
-<meta property="article:modified_time" content="2020-07-23T06:49:05.674Z">
+<meta property="article:published_time" content="2020-08-31T03:47:41.000Z">
+<meta property="article:modified_time" content="2020-08-31T03:49:00.467Z">
 <meta property="article:author" content="Johannes">
-<meta property="article:tag" content="General Tech">
+<meta property="article:tag" content="Computer Organization">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Johannes&#39; Blog" type="application/atom+xml">
@@ -190,14 +190,14 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-using-conda" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-数据类型总结" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
   
   
     <h1 class="article-title" itemprop="name">
-      using conda!
+      数据类型总结
     </h1>
   
 
@@ -209,8 +209,8 @@
               <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
         </span>
 
-<a href="/2020/07/06/using-conda/" class="archive-article-date">
-        <time datetime="2020-07-06T10:33:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-06</time>
+<a href="/2020/08/31/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E6%80%BB%E7%BB%93/" class="archive-article-date">
+        <time datetime="2020-08-31T03:47:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-31</time>
 </a>
 
   
@@ -223,7 +223,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">901字</span>
+      <span class="post-count">311字</span>
     </span>
   </span>
 
@@ -232,7 +232,7 @@
     <span class="post-meta-item-icon">
       <i class="icon-book icon"></i>
       <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">5分</span>
+      <span class="post-count">1分</span>
     </span>
   </span>
 </div>
@@ -243,90 +243,21 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <h1 id="Using-Conda"><a href="#Using-Conda" class="headerlink" title="Using Conda"></a>Using Conda</h1><h4 id="I-BACKGROUND"><a href="#I-BACKGROUND" class="headerlink" title="I. BACKGROUND:"></a>I. BACKGROUND:</h4><p>As I am doing some research in DS, using ML. Hence, I urgently  need something to manage my environments. </p>
+    <h4 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h4><p>Data types in 16,32,64 bit compiler.</p>
 <a id="more"></a>
 
-<p>As an open source package management system &amp; environment management system, Anaconda can be run on discipline systems. Easily creating, saving, loading and switching between <u>envs</u>(environment) on local computer, Conda helps saves developers a lot of time!</p>
-<p><strong>“ Conda is also included in Anaconda Enterprise, which provides on-site enterprise package and environment management for Python, R, Node.js, Java and other application stacks. “</strong>——Conda Documents </p>
-<h4 id="II-PROCESSIONS"><a href="#II-PROCESSIONS" class="headerlink" title="II. PROCESSIONS"></a>II. PROCESSIONS</h4><h6 id="1-CREATE-YOUR-ENV"><a href="#1-CREATE-YOUR-ENV" class="headerlink" title="1. CREATE YOUR ENV"></a>1. CREATE YOUR ENV</h6><p>At the beginning, we should generate a new environment as first.<!--Of Course, you have to download & install Anconda and its Prompt(A COMMAND INTERFACE)--></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(base)C:\WINDOWS\johannes-lin&gt;conda create -n tensorflow #Create an env called tf</span><br></pre></td></tr></table></figure>
-
-<p>Here, we create an environment called tensorflow :)</p>
-<p>Now we activate it as follow:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(tensorflow)C:\WINDOWS\johannes-lin&gt;activate tensorflow #Activate the env we created as above</span><br></pre></td></tr></table></figure>
-
-<p>Here, we notice that we get into this <u>env</u>(environment): in brackets, <code>base</code> becomes <code>tenforflow</code> .</p>
-<p>If you wanna go back to base <u>env</u>, feel free to  <code>deactivate</code> . </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(tensorflow)C:\WINDOWS\johannes-lin&gt;deactivate</span><br></pre></td></tr></table></figure>
-
-
-
-<h6 id="2-CREATE-ENV-IN-THE-ACTIVATED-ENV"><a href="#2-CREATE-ENV-IN-THE-ACTIVATED-ENV" class="headerlink" title="2. CREATE ENV IN THE ACTIVATED ENV"></a>2. CREATE ENV IN THE ACTIVATED ENV</h6><p><em>Python</em>: </p>
-<p> Since our demos run in python, we need to create its <u>env</u> in the activated <u>env</u> <code>tensorflow</code> as following: </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">(tensorflow)C:\WINDOWS\johannes-lin&gt;activate tensorflow #Activate the env we created as aboveconda create -n tensorflow python&#x3D;3.5.4 </span><br><span class="line"></span><br><span class="line">#Create the env for python whose version is 3.5.4(it is my case, you can choose which you like. But I recommend v3.5, which is compatible with tf1.x)</span><br></pre></td></tr></table></figure>
-
-<p>Here we create the <u>env</u> for python 3.5.4. And command notices us that some packages will be download.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Proceed ([y]&#x2F;n)?</span><br></pre></td></tr></table></figure>
-
-<p> Seeing this, just press the Enter!</p>
-<p>And these packages will be downloaded automatically.</p>
-<p>After all the processions have been done, we should check if the env is successfully installed:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(tensorflow)C:\WINDOWS\johannes-lin&gt;python</span><br></pre></td></tr></table></figure>
-
-<p>If you see prompt statements shown as : </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Python 3.5.4 |Continuum Analytics, Inc.| (default, Aug 14 2017, 13:41:13) [MSC v.1900 64 bit (AMD64)] on win32</span><br><span class="line"></span><br><span class="line">Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.</span><br></pre></td></tr></table></figure>
-
-<p>CONGRATS! you made it.</p>
-<p><em>tensorflow:</em></p>
-<p>Now, we turn to our important point: </p>
-<p>First of all, I would like to introduce the methods of using conda to install TensorFlow:</p>
-<p><strong>If you dig deeper, you’ll find that TensorFlow is one of the most popular and most used in industries machine learning libraries.</strong> </p>
-<p>Now, let’s begin as :</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(tensorflow)C:\WINDOWS\johannes-lin&gt;conda install tensorflow</span><br></pre></td></tr></table></figure>
-
-<p>As above, we cannot leave the activated environment where we install python! After all, we need to run machine learning codes in python.</p>
-<p>As above, we also use conda to help us install what we need :</p>
-<p>If you are like me, living in China or some countries as it, you might need mirror available in your country or region to boost your downloading speed, or you will have to be waiting for several hours.</p>
-<p>In China, we use Tsinghua University’s mirror :</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(tensorflow)C:\WINDOWS\johannes-lin&gt;conda config --add channels https:&#x2F;&#x2F;mirrors.tuna.tsinghua.edu.cn&#x2F;anaconda&#x2F;pkgs&#x2F;free&#x2F;</span><br></pre></td></tr></table></figure>
-
-
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(tensorflow)C:\WINDOWS\johannes-lin&gt;conda config --set show_channel_urls yes</span><br></pre></td></tr></table></figure>
-
-<p>Also, here we get some packages to be download as well.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Proceed ([y]&#x2F;n)?</span><br></pre></td></tr></table></figure>
-
-<p> Seeing this, just press the Enter!</p>
-<p>And the packages will be downloaded automatically.</p>
-<p>Now, we check if we have succeeded :</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(tensorflow)C:\WINDOWS\johannes-lin&gt;conda list tensorflow</span><br></pre></td></tr></table></figure>
-
-<p>In my case, it shows as :</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># packages in environment at E:\Anaconda3\envs\tensorflow:</span><br><span class="line">#</span><br><span class="line"># Name                    Version                   Build  Channel</span><br><span class="line">tensorflow                1.5.0                    pypi_0    pypi</span><br><span class="line">tensorflow-tensorboard    1.5.1                    pypi_0    pypi</span><br></pre></td></tr></table></figure>
-
-<p>Which means we succeed to install tensorflow v1.5<strong>!</strong></p>
-<p><em>import tf in python</em></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(tensorflow)C:\WINDOWS\johannes-lin&gt;python</span><br></pre></td></tr></table></figure>
-
-<p>Now, we can write python codes.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Python 3.5.4 |Continuum Analytics, Inc.| (default, Aug 14 2017, 13:41:13) [MSC v.1900 64 bit (AMD64)] on win32</span><br><span class="line">Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.</span><br><span class="line">&gt;&gt;&gt;import tensorflow as tf</span><br><span class="line">&gt;&gt;&gt;&gt;&gt;&gt; hello &#x3D; tf.constant(&quot;Hello,TensorFlow&quot;)</span><br><span class="line">&gt;&gt;&gt; sess &#x3D; tf.Session()</span><br><span class="line">2020-07-06 21:33:24.621393: I C:\tf_jenkins\workspace\rel-win\M\windows\PY\35\tensorflow\core\platform\cpu_feature_guard.cc:137] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX AVX2</span><br><span class="line">&gt;&gt;&gt; print(sess.run(hello))</span><br><span class="line">b&#39;Hello,TensorFlow&#39;</span><br><span class="line">&gt;&gt;&gt;</span><br></pre></td></tr></table></figure>
-
-<p>Session has the function of managing physical resources CPU, GPU and network connection.</p>
-<p>I guess you notice this :</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">2020-07-06 21:33:24.621393: I C:\tf_jenkins\workspace\rel-win\M\windows\PY\35\tensorflow\core\platform\cpu_feature_guard.cc:137] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX AVX2</span><br></pre></td></tr></table></figure>
-
-
-
-<p><strong>Why does it happen?</strong></p>
-<p>I do not wanna explain now, but I encourage you to google yourself, lol</p>
-<p><strong>How to ignore it?</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">import os</span><br><span class="line">os.environ[&#39;TF_CPP_MIN_LOG_LEVEL&#39;] &#x3D; &#39;2&#39;</span><br></pre></td></tr></table></figure>
-
-<p>Then, the warning will never come out.</p>
-<p>ABOVE ALL ARE THE METHODS TO INSTALL &amp; USE TensorFlow IN A EASY WAY.</p>
-<p>AND I WILL UPDATE THIS BLOG NEXT TIME.</p>
-<p>THX A LOT FOR YOUR READING!!!</p>
+<h3 id="16位编译器"><a href="#16位编译器" class="headerlink" title="16位编译器"></a>16位编译器</h3><h4 id="有符号型："><a href="#有符号型：" class="headerlink" title="有符号型："></a>有符号型：</h4><p>int：  2个字节<br>short : 2个字节<br>long:  4个字节<br>long long:  8个字节</p>
+<h4 id="无符号型："><a href="#无符号型：" class="headerlink" title="无符号型："></a>无符号型：</h4><p>unsigned int : 2个字节<br>unsigned short:2个字节<br>unsigned long: 4个字节</p>
+<h4 id="实型变量："><a href="#实型变量：" class="headerlink" title="实型变量："></a>实型变量：</h4><p>float:  4个字节 提供7位有效数字；<br>double:   8个字节  提供16位有效数字；<br>long double：16个字节  提供18-19位有效数字；</p>
+<h4 id="字符型："><a href="#字符型：" class="headerlink" title="字符型："></a>字符型：</h4><p>char ：1个字节<br>char*(即指针变量): 2个字节</p>
+<h3 id="32位编译器"><a href="#32位编译器" class="headerlink" title="32位编译器"></a>32位编译器</h3><h4 id="有符号型：-1"><a href="#有符号型：-1" class="headerlink" title="有符号型："></a>有符号型：</h4><p>short: 2个字节<br>int：4个字节<br><strong><em>long: 4个字节</em></strong><br>long long:  8个字节</p>
+<h4 id="无符号型：-1"><a href="#无符号型：-1" class="headerlink" title="无符号型："></a>无符号型：</h4><p>unsigned short:  2个字节<br>unsigned int : 4个字节<br><strong><em>unsigned long:  4个字节</em></strong></p>
+<h4 id="实型变量：-1"><a href="#实型变量：-1" class="headerlink" title="实型变量："></a>实型变量：</h4><p>float:  4个字节  提供7-8位有效数字；<br>double:   8个字节  提供15-16位有效数字；</p>
+<h4 id="字符型：-1"><a href="#字符型：-1" class="headerlink" title="字符型："></a>字符型：</h4><p>char ：1个字节<br><strong><em>char*（即指针变量）: 4个字节（32位的寻址空间是2^32, 即32个bit，也就是4个字节。同理64位编译器）</em></strong></p>
+<h3 id="64位编译器"><a href="#64位编译器" class="headerlink" title="64位编译器"></a>64位编译器</h3><h4 id="有符号型：-2"><a href="#有符号型：-2" class="headerlink" title="有符号型："></a>有符号型：</h4><p>short: 2个字节<br>int：4个字节<br><strong><em>long: 8个字节</em></strong><br>long long: 8个字节</p>
+<h4 id="无符号型：-2"><a href="#无符号型：-2" class="headerlink" title="无符号型："></a>无符号型：</h4><p>unsigned int : 4个字节<br><strong><em>unsigned long:  8个字节</em></strong></p>
+<h4 id="实型变量：-2"><a href="#实型变量：-2" class="headerlink" title="实型变量："></a>实型变量：</h4><p>float:  4个字节<br>double:   8个字节</p>
+<h4 id="字符型：-2"><a href="#字符型：-2" class="headerlink" title="字符型："></a>字符型：</h4><p>char ：1个字节<br><strong><em>char</em>(即指针变量): 8个字节*</strong></p>
 
     
 
@@ -363,7 +294,7 @@
         </li>
         <li>
           <strong>本文链接：</strong>
-          <a href="http://yoursite.com/2020/07/06/using-conda/" title="using conda!" target="_blank">http://yoursite.com/2020/07/06/using-conda/</a>
+          <a href="http://yoursite.com/2020/08/31/数据类型总结/" title="数据类型总结" target="_blank">http://yoursite.com/2020/08/31/数据类型总结/</a>
         </li>
         
         <li>
@@ -385,7 +316,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">General Tech</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Computer Organization</a>
         		</li>
       		
 		</ul>
@@ -441,7 +372,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/07/06/using-conda/" alt="微信分享二维码"> -->
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/08/31/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E6%80%BB%E7%BB%93/" alt="微信分享二维码"> -->
     </div>
 </div>
 
@@ -456,18 +387,9 @@
 
 <nav id="article-nav">
   
-    <a href="/2020/07/06/Fraud-Detection-hw1/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Fraud Detection_hw1
-        
-      </div>
-    </a>
   
-  
-    <a href="/2020/06/27/markdown-creating/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">markdown creating</div>
+    <a href="/2020/08/31/%E6%97%B6%E9%97%B4%E7%A9%BA%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">时间空间复杂度</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -625,10 +547,6 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Front-end</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Java</a>
               </li>
              
@@ -637,7 +555,23 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Front-end</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">General Tech</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Computer Network</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Computer Organization</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Basic Algorithms</a>
               </li>
             
             <div class="clearfix"></div>
