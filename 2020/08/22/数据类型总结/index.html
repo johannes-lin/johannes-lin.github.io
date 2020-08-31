@@ -6,21 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>多种排序方式总结 | Johannes&#39; Blog</title>
+  <title>数据类型总结 | Johannes&#39; Blog</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="AbstractHere I list some common sorting methods.">
+  <meta name="description" content="AbstractData types in 16,32,64 bit compiler.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="多种排序方式总结">
-<meta property="og:url" content="http://yoursite.com/2020/08/31/%E5%A4%9A%E7%A7%8D%E6%8E%92%E5%BA%8F%E6%96%B9%E5%BC%8F%E6%80%BB%E7%BB%93/index.html">
+<meta property="og:title" content="数据类型总结">
+<meta property="og:url" content="http://yoursite.com/2020/08/22/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E6%80%BB%E7%BB%93/index.html">
 <meta property="og:site_name" content="Johannes&#39; Blog">
-<meta property="og:description" content="AbstractHere I list some common sorting methods.">
+<meta property="og:description" content="AbstractData types in 16,32,64 bit compiler.">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-08-31T03:52:35.000Z">
-<meta property="article:modified_time" content="2020-08-31T05:01:29.342Z">
+<meta property="article:published_time" content="2020-08-22T03:18:41.000Z">
+<meta property="article:modified_time" content="2020-08-31T05:08:32.241Z">
 <meta property="article:author" content="Johannes">
-<meta property="article:tag" content="Basic Algorithms">
+<meta property="article:tag" content="Computer Organization">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Johannes&#39; Blog" type="application/atom+xml">
@@ -190,14 +190,14 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-多种排序方式总结" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-数据类型总结" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
   
   
     <h1 class="article-title" itemprop="name">
-      多种排序方式总结
+      数据类型总结
     </h1>
   
 
@@ -209,8 +209,8 @@
               <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
         </span>
 
-<a href="/2020/08/31/%E5%A4%9A%E7%A7%8D%E6%8E%92%E5%BA%8F%E6%96%B9%E5%BC%8F%E6%80%BB%E7%BB%93/" class="archive-article-date">
-        <time datetime="2020-08-31T03:52:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-31</time>
+<a href="/2020/08/22/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E6%80%BB%E7%BB%93/" class="archive-article-date">
+        <time datetime="2020-08-22T03:18:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-22</time>
 </a>
 
   
@@ -223,7 +223,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">185字</span>
+      <span class="post-count">311字</span>
     </span>
   </span>
 
@@ -243,17 +243,21 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <h5 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h5><p>Here I list some common sorting methods.</p>
+    <h4 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h4><p>Data types in 16,32,64 bit compiler.</p>
 <a id="more"></a>
 
-<h2 id="直接插入排序"><a href="#直接插入排序" class="headerlink" title="直接插入排序"></a>直接插入排序</h2><h5 id="时间复杂度"><a href="#时间复杂度" class="headerlink" title="时间复杂度"></a>时间复杂度</h5><p>O(n²)</p>
-<h5 id="最坏情况："><a href="#最坏情况：" class="headerlink" title="最坏情况："></a>最坏情况：</h5><p>​        当序列中记录按关键字逆序排序时，总比较次数达到最大值：(n + 2)(n - 1)/2</p>
-<h2 id="希尔排序"><a href="#希尔排序" class="headerlink" title="希尔排序"></a>希尔排序</h2><h5 id="时间复杂度-1"><a href="#时间复杂度-1" class="headerlink" title="时间复杂度"></a>时间复杂度</h5><p>？？？</p>
-<h2 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h2><h5 id="时间复杂度-2"><a href="#时间复杂度-2" class="headerlink" title="时间复杂度"></a>时间复杂度</h5><p>O(logn)</p>
-<h5 id="最坏情况：-1"><a href="#最坏情况：-1" class="headerlink" title="最坏情况："></a>最坏情况：</h5><p>若每趟排序之后，枢轴位置均偏向子序列的一端。时间复杂度为: O(n)</p>
-<h2 id="堆排序"><a href="#堆排序" class="headerlink" title="堆排序"></a>堆排序</h2><h5 id="时间复杂度："><a href="#时间复杂度：" class="headerlink" title="时间复杂度："></a>时间复杂度：</h5><p>O(nlogn)</p>
-<h5 id="最坏情况：-2"><a href="#最坏情况：-2" class="headerlink" title="最坏情况："></a>最坏情况：</h5><p>​        n个结点的完全二叉树深度为 log2n + 1 ，则调整建新堆时调用HeapAdjust过程 n - 1次，总共进行的比对次数不超过 2n(log2n)，</p>
-<p>​       因此，堆排序在最坏情况下，其时间复杂度也为O(nlogn)</p>
+<h3 id="16位编译器"><a href="#16位编译器" class="headerlink" title="16位编译器"></a>16位编译器</h3><h4 id="有符号型："><a href="#有符号型：" class="headerlink" title="有符号型："></a>有符号型：</h4><p>int：  2个字节<br>short : 2个字节<br>long:  4个字节<br>long long:  8个字节</p>
+<h4 id="无符号型："><a href="#无符号型：" class="headerlink" title="无符号型："></a>无符号型：</h4><p>unsigned int : 2个字节<br>unsigned short:2个字节<br>unsigned long: 4个字节</p>
+<h4 id="实型变量："><a href="#实型变量：" class="headerlink" title="实型变量："></a>实型变量：</h4><p>float:  4个字节 提供7位有效数字；<br>double:   8个字节  提供16位有效数字；<br>long double：16个字节  提供18-19位有效数字；</p>
+<h4 id="字符型："><a href="#字符型：" class="headerlink" title="字符型："></a>字符型：</h4><p>char ：1个字节<br>char*(即指针变量): 2个字节</p>
+<h3 id="32位编译器"><a href="#32位编译器" class="headerlink" title="32位编译器"></a>32位编译器</h3><h4 id="有符号型：-1"><a href="#有符号型：-1" class="headerlink" title="有符号型："></a>有符号型：</h4><p>short: 2个字节<br>int：4个字节<br><strong><em>long: 4个字节</em></strong><br>long long:  8个字节</p>
+<h4 id="无符号型：-1"><a href="#无符号型：-1" class="headerlink" title="无符号型："></a>无符号型：</h4><p>unsigned short:  2个字节<br>unsigned int : 4个字节<br><strong><em>unsigned long:  4个字节</em></strong></p>
+<h4 id="实型变量：-1"><a href="#实型变量：-1" class="headerlink" title="实型变量："></a>实型变量：</h4><p>float:  4个字节  提供7-8位有效数字；<br>double:   8个字节  提供15-16位有效数字；</p>
+<h4 id="字符型：-1"><a href="#字符型：-1" class="headerlink" title="字符型："></a>字符型：</h4><p>char ：1个字节<br><strong><em>char*（即指针变量）: 4个字节（32位的寻址空间是2^32, 即32个bit，也就是4个字节。同理64位编译器）</em></strong></p>
+<h3 id="64位编译器"><a href="#64位编译器" class="headerlink" title="64位编译器"></a>64位编译器</h3><h4 id="有符号型：-2"><a href="#有符号型：-2" class="headerlink" title="有符号型："></a>有符号型：</h4><p>short: 2个字节<br>int：4个字节<br><strong><em>long: 8个字节</em></strong><br>long long: 8个字节</p>
+<h4 id="无符号型：-2"><a href="#无符号型：-2" class="headerlink" title="无符号型："></a>无符号型：</h4><p>unsigned int : 4个字节<br><strong><em>unsigned long:  8个字节</em></strong></p>
+<h4 id="实型变量：-2"><a href="#实型变量：-2" class="headerlink" title="实型变量："></a>实型变量：</h4><p>float:  4个字节<br>double:   8个字节</p>
+<h4 id="字符型：-2"><a href="#字符型：-2" class="headerlink" title="字符型："></a>字符型：</h4><p>char ：1个字节<br><strong><em>char</em>(即指针变量): 8个字节*</strong></p>
 
     
 
@@ -290,7 +294,7 @@
         </li>
         <li>
           <strong>本文链接：</strong>
-          <a href="http://yoursite.com/2020/08/31/多种排序方式总结/" title="多种排序方式总结" target="_blank">http://yoursite.com/2020/08/31/多种排序方式总结/</a>
+          <a href="http://yoursite.com/2020/08/22/数据类型总结/" title="数据类型总结" target="_blank">http://yoursite.com/2020/08/22/数据类型总结/</a>
         </li>
         
         <li>
@@ -312,7 +316,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Basic Algorithms</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Computer Organization</a>
         		</li>
       		
 		</ul>
@@ -368,7 +372,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/08/31/%E5%A4%9A%E7%A7%8D%E6%8E%92%E5%BA%8F%E6%96%B9%E5%BC%8F%E6%80%BB%E7%BB%93/" alt="微信分享二维码"> -->
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/08/22/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E6%80%BB%E7%BB%93/" alt="微信分享二维码"> -->
     </div>
 </div>
 
@@ -383,18 +387,18 @@
 
 <nav id="article-nav">
   
-    <a href="/2020/08/31/Mathematical-Formulas-in-Markdown/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2020/08/24/%E4%BA%A4%E6%8D%A2%E6%9C%BA%E5%92%8C%E7%BD%91%E6%A1%A5/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          Mathematical Formulas in Markdown
+          交换机和网桥
         
       </div>
     </a>
   
   
-    <a href="/2020/08/31/Linked-List/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Linked List</div>
+    <a href="/2020/08/20/%E6%97%B6%E9%97%B4%E7%A9%BA%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">时间空间复杂度</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -548,6 +552,10 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Machine Learning</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Front-end</a>
               </li>
              
@@ -560,15 +568,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">General Tech</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Machine Learning</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Basic Algorithms</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">General Tech</a>
               </li>
              
               <li class="article-tag-list-item">

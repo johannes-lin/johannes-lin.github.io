@@ -192,225 +192,6 @@
             
 
   
-    <article id="post-How-to-define-Classes-and-Create-objects-in-Java" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2020/07/07/How-to-define-Classes-and-Create-objects-in-Java/" target="_blank">How to define Classes and Create objects in Java?</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2020/07/07/How-to-define-Classes-and-Create-objects-in-Java/" class="archive-article-date">
-        <time datetime="2020-07-07T10:24:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-07</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h4 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h4><p>I am learning Java as a beginner, here I’m gonna introduce how to create classes in Java.</p>
-<h2 id="1-Basically"><a href="#1-Basically" class="headerlink" title="1. Basically"></a>1. Basically</h2><p>In <code>SimpleLocation.java</code> , we have a few lines of codes as follow:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">public class SimpleLocation</span><br></pre></td></tr></table></figure>
-
-<p>Firstly, when creating a class, you have to put it in a file that has the same name as the class, and that’s if the class is public, which our class is.</p>
-<p>And then, we see member variables.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">public class SimpleLocation</span><br><span class="line">&#123;</span><br><span class="line"> public double latitude;</span><br><span class="line"> public double longitude;</span><br></pre></td></tr></table></figure>
-
-<p>These <strong>member variables</strong> are variables that exits throughout the class. They are defined inside a class definition, but out of definition of any method in the class:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">public SimpleLocation(double lat, double lon) &#x2F;&#x2F; this is what we call &quot;method&quot; in the class.</span><br><span class="line"> &#123;</span><br><span class="line"> this.latitude &#x3D; lat;</span><br><span class="line"> this.longitude &#x3D; lon;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
-
-<p>As above, this is what we call “method” in the class, which create a new object.</p>
-<p>Also, you can call it Constructor.</p>
-<p>A constructor does not have a return type.</p>
-<p><code>public SimpleLocation</code> : you can see it is what a constructor uses.  </p>
-<p>Then, what we have is another method:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">public double distance(SimpleLocation other)</span><br><span class="line">&#123;</span><br><span class="line"> return getDist(this.latitude, this.longitude,</span><br><span class="line"> other.latitude, other.longitude); </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>Using this method, we can get the distance between two objects.</p>
-<p>You might be curious about <code>this</code>. Now, let me introduce it to you:</p>
-<p>&lt;color = “red”&gt;<strong>*”this” refers to the object that calls the method. In this case, “this” refers to the method “distance”.*</strong></p>
-<p><em>“When used in functions, “this” keyword refers to the calling object. Every (or most) time you refer to the calling object’s property inside a method, you can use “this” keyword. For example, in the constructor function, you can write this.variableName since you’re referring to the object’s property. It helps since instead of writing the object’s name each time, you can just conveniently write “this” instead. It also slightly improves code’s efficiency unlike referencing the variable without “this” keyword. “</em>  —— Online Resource</p>
-<h2 id="2-Something-to-Preview"><a href="#2-Something-to-Preview" class="headerlink" title="2. Something to Preview"></a>2. Something to Preview</h2><p>And now, How to create new variables?<br><strong><em>answer:</em></strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ClassName objName &#x3D; new ClassName(xxx,xxx);</span><br></pre></td></tr></table></figure>
-
-<p>The above codes go into <code>ClassName</code>, and calls the constructor.</p>
-<h2 id="3-Next-Step"><a href="#3-Next-Step" class="headerlink" title="3. Next Step"></a>3. Next Step</h2><p>Now let’s define in a totally different class. Because every object has to be created in a class in Java. </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">public class LocationTester</span><br><span class="line">&#123;</span><br><span class="line"> public static void main(String[] args)</span><br><span class="line"> &#123;</span><br><span class="line"> SimpleLocation ucsd &#x3D; </span><br><span class="line"> new SimpleLocation(32.9, -117.2);</span><br><span class="line"> SimpleLocation lima &#x3D;</span><br><span class="line"> new SimpleLocation(-12.0, -77.0);</span><br><span class="line"> System.out.println(ucsd.distance(lima));</span><br><span class="line"> &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>After creating 2 new objects(ucsd and lima) in main, we use the <code>distance</code> method to help us get distance between the 2 objects.</p>
-<p>And then, as you see in the last line before curly bracket, we print <code>ucsd.distance(lima)</code>.</p>
-<p><strong><em>EXPLAINATION:</em></strong> </p>
-<p>Here, we have to go back to the method <code>distance</code>:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">public double distance(SimpleLocation other)</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"> public double distance(SimpleLocation other)</span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line"> return getDist(this.latitude, this.longitude,</span><br><span class="line"></span><br><span class="line"> other.latitude, other.longitude); </span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>Lima is an <em>Argument of Function</em>, which is stored in “other” parameter.</p>
-<p>And <code>this</code> here refers to ucsd.</p>
-
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Oriented Object Programming</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Coursera上week2，Scope的问题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2020/07/07/Coursera%E4%B8%8Aweek2%EF%BC%8CScope%E7%9A%84%E9%97%AE%E9%A2%98/" target="_blank">How to define Classes and Create objects in Java?</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2020/07/07/Coursera%E4%B8%8Aweek2%EF%BC%8CScope%E7%9A%84%E9%97%AE%E9%A2%98/" class="archive-article-date">
-        <time datetime="2020-07-07T10:24:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-07</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h5 id="1-Demo-for-This-Video"><a href="#1-Demo-for-This-Video" class="headerlink" title="1. Demo for This Video"></a>1. Demo for This Video</h5><p>In <em>SimpleLocation.java</em>， we have:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">public class SimpleLocation</span><br><span class="line">&#123;</span><br><span class="line"> public double latitude;</span><br><span class="line"> public double longitude;</span><br><span class="line"> </span><br><span class="line"> public SimpleLocation(double latIn, </span><br><span class="line"> double lonIn)</span><br><span class="line"> &#123;</span><br><span class="line"> this.latitude &#x3D; latIn;</span><br><span class="line"> this.longitude &#x3D; lonIn;</span><br><span class="line"> &#125;</span><br><span class="line"> &#x2F;&#x2F; More code here</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>And in <em>LocationTester.java</em>, we have:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">public class LocationTester</span><br><span class="line">&#123;</span><br><span class="line"> public static void main(String[] args)</span><br><span class="line"> &#123;</span><br><span class="line"> SimpleLocation lima &#x3D; </span><br><span class="line"> new SimpleLocation(-12.0, -77.0);</span><br><span class="line"> &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>Firstly, we call <code>lima</code>, which is an object, local variable.</p>
-<p>Because we can only use <code>lima</code> in main function.</p>
-<p>And the next are <code>latIn</code> and <code>lonIn</code>, which are parameter to constructor. Their values can be changed if you want to.</p>
-<p>The third variable are called member variables<code>public doubke latitude</code>. Their scope is the whole class itself. So <code>latitude</code> and <code>logitude</code> are available from any method inside this <code>SimpleLocation</code> class.</p>
-
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Oriented Object Programming</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
     <article id="post-Activation-Functions-Their-Gradients" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -548,6 +329,175 @@
 			 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Machine Learning</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Using-Anaconda" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2020/07/04/Using-Anaconda/" target="_blank">Using Anaconda</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2020/07/04/Using-Anaconda/" class="archive-article-date">
+        <time datetime="2020-07-04T11:27:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-04</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h4 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h4><p>How-To-Use-Conda Tutorial.</p>
+    
+    <a class="article-more-a" href="/2020/07/04/Using-Anaconda/#more">more >></a>
+    
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">General Tech</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-git-clone出现的问题解决" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2020/07/01/git-clone%E5%87%BA%E7%8E%B0%E7%9A%84%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/" target="_blank">git clone出现的问题解决</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2020/07/01/git-clone%E5%87%BA%E7%8E%B0%E7%9A%84%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/" class="archive-article-date">
+        <time datetime="2020-07-01T06:23:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-01</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <p>Today, when I wanna git clone a fraud detection repository, I failed.</p>
+<p>Luckily, I find a satisfying result at last.</p>
+    
+    <a class="article-more-a" href="/2020/07/01/git-clone%E5%87%BA%E7%8E%B0%E7%9A%84%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/#more">more >></a>
+    
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Git</a>
         		</li>
       		
 		</ul>
@@ -1202,6 +1152,10 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Machine Learning</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Front-end</a>
               </li>
              
@@ -1214,15 +1168,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">General Tech</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Machine Learning</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Basic Algorithms</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">General Tech</a>
               </li>
              
               <li class="article-tag-list-item">
