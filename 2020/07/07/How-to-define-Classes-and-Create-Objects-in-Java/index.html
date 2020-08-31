@@ -6,23 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>My Programmer Roadmap | Johannes&#39; Blog</title>
+  <title>How to define Classes and Create Objects in Java? | Johannes&#39; Blog</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="Here I put the front-end roadmap, giving me the references.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="My Programmer Roadmap">
-<meta property="og:url" content="http://yoursite.com/front_end/My-Programmer-Roadmap.html">
+  <meta name="description" content="AbstractI am learning Java as a beginner, here I’m gonna introduce how to create classes in Java.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="How to define Classes and Create Objects in Java?">
+<meta property="og:url" content="http://yoursite.com/2020/07/07/How-to-define-Classes-and-Create-Objects-in-Java/index.html">
 <meta property="og:site_name" content="Johannes&#39; Blog">
-<meta property="og:description" content="Here I put the front-end roadmap, giving me the references.">
+<meta property="og:description" content="AbstractI am learning Java as a beginner, here I’m gonna introduce how to create classes in Java.">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://yoursite.com/imgs/frontend.png">
-<meta property="article:published_time" content="2020-06-27T02:25:10.000Z">
-<meta property="article:modified_time" content="2020-07-20T11:41:50.310Z">
+<meta property="article:published_time" content="2020-07-07T10:24:22.000Z">
+<meta property="article:modified_time" content="2020-08-31T11:36:26.265Z">
 <meta property="article:author" content="Johannes">
+<meta property="article:tag" content="Java">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://yoursite.com/imgs/frontend.png">
   
     <link rel="alternative" href="/atom.xml" title="Johannes&#39; Blog" type="application/atom+xml">
   
@@ -191,14 +190,14 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="page-" class="article article-type-page " itemscope itemprop="blogPost">
+            <article id="post-How-to-define-Classes-and-Create-Objects-in-Java" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
   
   
     <h1 class="article-title" itemprop="name">
-      My Programmer Roadmap
+      How to define Classes and Create Objects in Java?
     </h1>
   
 
@@ -210,8 +209,8 @@
               <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
         </span>
 
-<a href="/front_end/My-Programmer-Roadmap.html" class="archive-article-date">
-        <time datetime="2020-06-27T02:25:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-27</time>
+<a href="/2020/07/07/How-to-define-Classes-and-Create-Objects-in-Java/" class="archive-article-date">
+        <time datetime="2020-07-07T10:24:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-07</time>
 </a>
 
   
@@ -224,7 +223,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">159字</span>
+      <span class="post-count">513字</span>
     </span>
   </span>
 
@@ -233,7 +232,7 @@
     <span class="post-meta-item-icon">
       <i class="icon-book icon"></i>
       <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">1分</span>
+      <span class="post-count">3分</span>
     </span>
   </span>
 </div>
@@ -244,20 +243,47 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <p>Here I put the front-end roadmap, giving me the references.</p>
+    <h4 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h4><p>I am learning Java as a beginner, here I’m gonna introduce how to create classes in Java.</p>
 <a id="more"></a>
 
-<p>I have nothing to do with my blog?</p>
-<p>I think I should really improve my English, since I have not been using it for a long time, in my native speaking environment.</p>
-<p><img src="/imgs/frontend.png" alt="frontend"></p>
-<p>From: <a href="https://github.com/kamranahmedse/developer-roadmap" target="_blank" rel="noopener">https://github.com/kamranahmedse/developer-roadmap</a> </p>
-<p>git deploy的方法：<br><a href="https://www.cnblogs.com/zqyanywn/p/8418729.html" target="_blank" rel="noopener">https://www.cnblogs.com/zqyanywn/p/8418729.html</a></p>
-<p>git remove的方法：<br>git –bare init //初始化git<br>git remote －v 查看远程origin<br>git remote rm origin 删除远程origin<br>git remote add origin <a href="mailto:sqt@180.169.33.117">sqt@180.169.33.117</a>:repositores/ZSKPad.git<br>git push －u origin master //第一次push的时候要- u<br>rm -rf +文件夹名次 删除文件夹</p>
-<ol>
-<li>修改命令<br>git remte origin set-url URL</li>
-<li>先删后加<br>git remote rm origin<br>git remote add origin <a href="mailto:git@github.com">git@github.com</a>:Liutos/foobar.git</li>
-<li>直接修改config文件</li>
-</ol>
+<h2 id="1-Basically"><a href="#1-Basically" class="headerlink" title="1. Basically"></a>1. Basically</h2><p>In <code>SimpleLocation.java</code> , we have a few lines of codes as follow:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">public class SimpleLocation</span><br></pre></td></tr></table></figure>
+
+<p>Firstly, when creating a class, you have to put it in a file that has the same name as the class, and that’s if the class is public, which our class is.</p>
+<p>And then, we see member variables.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">public class SimpleLocation</span><br><span class="line">&#123;</span><br><span class="line"> public double latitude;</span><br><span class="line"> public double longitude;</span><br></pre></td></tr></table></figure>
+
+<p>These <strong>member variables</strong> are variables that exits throughout the class. They are defined inside a class definition, but out of definition of any method in the class:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">public SimpleLocation(double lat, double lon) &#x2F;&#x2F; this is what we call &quot;method&quot; in the class.</span><br><span class="line"> &#123;</span><br><span class="line"> this.latitude &#x3D; lat;</span><br><span class="line"> this.longitude &#x3D; lon;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+
+<p>As above, this is what we call “method” in the class, which create a new object.</p>
+<p>Also, you can call it Constructor.</p>
+<p>A constructor does not have a return type.</p>
+<p><code>public SimpleLocation</code> : you can see it is what a constructor uses.  </p>
+<p>Then, what we have is another method:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">public double distance(SimpleLocation other)</span><br><span class="line">&#123;</span><br><span class="line"> return getDist(this.latitude, this.longitude,</span><br><span class="line"> other.latitude, other.longitude); </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>Using this method, we can get the distance between two objects.</p>
+<p>You might be curious about <code>this</code>. Now, let me introduce it to you:</p>
+<p><font color = "red"><strong>*”this” refers to the object that calls the method. In this case, “this” refers to the method “distance”.*</strong></font></p>
+<p><em>“When used in functions, “this” keyword refers to the calling object. Every (or most) time you refer to the calling object’s property inside a method, you can use “this” keyword. For example, in the constructor function, you can write this.variableName since you’re referring to the object’s property. It helps since instead of writing the object’s name each time, you can just conveniently write “this” instead. It also slightly improves code’s efficiency unlike referencing the variable without “this” keyword. “</em>  —— Online Resource</p>
+<h2 id="2-Something-to-Preview"><a href="#2-Something-to-Preview" class="headerlink" title="2. Something to Preview"></a>2. Something to Preview</h2><p>And now, How to create new variables?<br><strong><em>answer:</em></strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ClassName objName &#x3D; new ClassName(xxx,xxx);</span><br></pre></td></tr></table></figure>
+
+<p>The above codes go into <code>ClassName</code>, and calls the constructor.</p>
+<h2 id="3-Next-Step"><a href="#3-Next-Step" class="headerlink" title="3. Next Step"></a>3. Next Step</h2><p>Now let’s define in a totally different class. Because every object has to be created in a class in Java. </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">public class LocationTester</span><br><span class="line">&#123;</span><br><span class="line"> public static void main(String[] args)</span><br><span class="line"> &#123;</span><br><span class="line"> SimpleLocation ucsd &#x3D; </span><br><span class="line"> new SimpleLocation(32.9, -117.2);</span><br><span class="line"> SimpleLocation lima &#x3D;</span><br><span class="line"> new SimpleLocation(-12.0, -77.0);</span><br><span class="line"> System.out.println(ucsd.distance(lima));</span><br><span class="line"> &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>After creating 2 new objects(ucsd and lima) in main, we use the <code>distance</code> method to help us get distance between the 2 objects.</p>
+<p>And then, as you see in the last line before curly bracket, we print <code>ucsd.distance(lima)</code>.</p>
+<p><strong><em>EXPLAINATION:</em></strong> </p>
+<p>Here, we have to go back to the method <code>distance</code>:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">public double distance(SimpleLocation other)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"> public double distance(SimpleLocation other)</span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line"> return getDist(this.latitude, this.longitude,</span><br><span class="line"></span><br><span class="line"> other.latitude, other.longitude); </span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>Lima is an <em>Argument of Function</em>, which is stored in “other” parameter.</p>
+<p>And <code>this</code> here refers to ucsd.</p>
 
     
 
@@ -294,7 +320,7 @@
         </li>
         <li>
           <strong>本文链接：</strong>
-          <a href="http://yoursite.com/front_end/My-Programmer-Roadmap.html" title="My Programmer Roadmap" target="_blank">http://yoursite.com/front_end/My-Programmer-Roadmap.html</a>
+          <a href="http://yoursite.com/2020/07/07/How-to-define-Classes-and-Create-Objects-in-Java/" title="How to define Classes and Create Objects in Java?" target="_blank">http://yoursite.com/2020/07/07/How-to-define-Classes-and-Create-Objects-in-Java/</a>
         </li>
         
         <li>
@@ -311,6 +337,17 @@
   <div class="article-info article-info-index">
     
     
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
     
 
     
@@ -361,7 +398,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/front_end/My-Programmer-Roadmap.html" alt="微信分享二维码"> -->
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/07/07/How-to-define-Classes-and-Create-Objects-in-Java/" alt="微信分享二维码"> -->
     </div>
 </div>
 
@@ -373,6 +410,25 @@
   </div>
 </article>
 
+
+<nav id="article-nav">
+  
+    <a href="/2020/07/07/public-private/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          public &amp; private
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/07/07/Coursera%E4%B8%8Aweek2%EF%BC%8CScope%E7%9A%84%E9%97%AE%E9%A2%98/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">How to define Classes and Create objects in Java?</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
 
 
 <aside class="wrap-side-operation">
@@ -442,7 +498,7 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
