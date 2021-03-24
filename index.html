@@ -180,6 +180,214 @@
             
 
   
+    <article id="post-indoor_dev" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2021/03/25/indoor_dev/" target="_blank">indoor_dev</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2021/03/25/indoor_dev/" class="archive-article-date">
+        <time datetime="2021-03-24T16:05:45.175Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-25</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <p>室内切换文档整理</p>
+<h3 id="操作的前提-默认条件"><a href="#操作的前提-默认条件" class="headerlink" title="操作的前提 (默认条件)"></a><h3 id="default">操作的前提 (默认条件)</h3></h3><ol>
+<li>任意2个主信标在地图上不能完全重叠，其经纬度值不能完全相同。</li>
+<li>人员经纬度和其所属信标经纬度应完全一致。</li>
+</ol>
+<center>目录</center>
+
+<p>一、 <a href="#已完成部分">已完成部分</a></p>
+<ol>
+<li><a href="#0">地图切换核心</a></li>
+<li><a href="#1">DB</a></li>
+<li><a href="#2">Access 信标表<code>BeaconDao.cs</code></a></li>
+<li><a href="#3">对应站内人员图标</a></li>
+<li><a href="#4">信标管理 (遍历所有可能性)</a></li>
+<li><a href="#5">站点配置</a></li>
+</ol>
+<p>二、<a href="#计划部分">计划部分 (待评估)</a></p>
+<ol>
+<li><a href="#6">历史轨迹相关</a></li>
+<li><a href="#7">调度页面</a></li>
+<li><a href="#8">配置页面</a></li>
+</ol>
+<p>三、<a href="#存在问题">存在问题</a></p>
+<h1 id="已完成部分"><a href="#已完成部分" class="headerlink" title="已完成部分"></a><u>已完成部分</u></h1><h3 id="1-地图切换核心"><a href="#1-地图切换核心" class="headerlink" title="1.地图切换核心 "></a><h3 id="0">1.地图切换核心 </h3></h3><p><strong><em>/重要/</em></strong> <code>ol-map.js</code></p>
+<h4 id="1-1-全线地图"><a href="#1-1-全线地图" class="headerlink" title="1.1 全线地图"></a>1.1 全线地图</h4><p>静态图。在图上有多个站点标识。双击后即可进入相应站点。其中，<strong><em>\</em>站点的相应信息* *</strong>由<a href="#pic1">图2</a>所示的格式从数据库中获取并存储。存储格式为 <code>OpenLayers</code> 中的 <code>Feature</code>。</p>
+<p><strong>站点的相应信息：</strong>其中包含<strong><em>\</em>全局变量**</strong>，包括： 经纬度范围 (两个元素的数组格式)：<code>longitudeRange</code>, <code>latitudeRange</code>；站内地图起始经纬度 (在3857下)：<code>indoorOffsetLon</code>, <code>indoorOffsetLat</code>。</p>
+<p><img src="/imgs/mapSwitching_plan.png" alt="mapSwitching_plan"></p>
+<center>图1 地图切换逻辑</center>
+
+<h4 id="1-2-站内地图"><a href="#1-2-站内地图" class="headerlink" title="1.2 站内地图"></a>1.2 站内地图</h4><p>同样为静态图，根据像素和 3857 下经纬度的转换比 (≈111319.5)，制定每张站内地图的范围。当退出当前站内地图时，打开的窗口均自动关闭。</p>
+<h3 id="2-DB"><a href="#2-DB" class="headerlink" title="2.DB"></a><h3 id="1">2.DB</h3></h3><p><img src="/imgs/metroStation.png" alt="metroStation"></p>
+<center id="pic1">图2 站点数据库表</center>
+
+<p><img src="/imgs/metroStation_desc.png" alt="metroStation_desc"></p>
+<center>图3 站点数据表对应注释</center>
+
+
+
+<h3 id="3-Access-信标表BeaconDao-cs"><a href="#3-Access-信标表BeaconDao-cs" class="headerlink" title="3. Access  信标表BeaconDao.cs"></a><h3 id="2">3. Access  信标表<code>BeaconDao.cs</code></h3></h3><h4 id="3-1-分页查询"><a href="#3-1-分页查询" class="headerlink" title="3.1 分页查询"></a>3.1 分页查询</h4><p>根据当前站点经纬度范围 (由 <code>ol-beaconLayer.js</code> 传 <code>ranges</code> 给 <code>ManageBeacon.js</code> 得到 )，查询范围内的所有信标。</p>
+<p>查询方法封装在 <code>SqlCommandConditionBuilder</code> 的 <code>GetDicParams</code> 中。</p>
+<h4 id="3-2-获取站内地图上所有信标"><a href="#3-2-获取站内地图上所有信标" class="headerlink" title="3.2 获取站内地图上所有信标"></a>3.2 获取站内地图上所有信标</h4><p>同样获取站内地图经纬度范围后，使用 SQL 语句进行查询</p>
+<h4 id="3-3-新增信标"><a href="#3-3-新增信标" class="headerlink" title="3.3 新增信标"></a>3.3 新增信标</h4><p>由于不同车站内的信标ID可以一致，所以需要修改报错条件：</p>
+<p>3.3.1 在同一站内的 <code>beaconId</code> 不可相同；</p>
+<p>3.3.2 基站ID由下拉框中的数字限定;</p>
+<p>3.3.3 添加功能中，只能添加主信标</p>
+<h4 id="3-4-新增虚拟信标"><a href="#3-4-新增虚拟信标" class="headerlink" title="3.4 新增虚拟信标"></a>3.4 新增虚拟信标</h4><p>相关条件：</p>
+<ol>
+<li>虚拟信标的新增、修改，只与 “备注”、“基站ID”相关； </li>
+<li>虚拟信标的基站ID不可与现存的、其主信标、其他同一主信标下的虚拟信标相同，其中，<a href="#default">同一经纬度的信标，基站不可相同</a>；</li>
+<li>虚拟信标条目，不可再“新增虚拟信标” (隐藏该功能，或使该功能的按钮失效)。</li>
+</ol>
+<h4 id="3-5-修改信标"><a href="#3-5-修改信标" class="headerlink" title="3.5 修改信标"></a>3.5 修改信标</h4><p>修改主信标的时候，它本身及其下属的所有虚拟信标都需要被修改相应的内容；修改虚拟信标则仅需要修改它本身 (基站ID)。</p>
+<h4 id="3-6-删除信标"><a href="#3-6-删除信标" class="headerlink" title="3.6 删除信标"></a>3.6 删除信标</h4><p>删除的信标分为2种：“虚拟信标”和“主信标”。</p>
+<p>删除时，选中的可能性有：1. 只有主信标；2. 主信标 + 其他主信标下的虚拟信标； 3. 主信标及其虚拟信标 + 其他主信标下的虚拟信标； 4. 只有虚拟信标。</p>
+<p><strong>需求是</strong>：删除主信标的时候，所有其下属的虚拟信标均被删除；删除虚拟信标时，则仅删除本条。</p>
+<p><strong>思路：</strong>将虚拟信标视为其主信标的子集。主信标删除数据量大，会较大程度地影响虚拟信标的删除。所以，剔除子集以及无关子集后，主信标及其虚拟信标的删除操作会更加简便。</p>
+<p><strong>采用的方案是</strong>：先删除所有被选中的虚拟信标，然后将被选中的主信标及其所有虚拟信标删除。</p>
+<h3 id="4-对应站内人员图标"><a href="#4-对应站内人员图标" class="headerlink" title="4.对应站内人员图标"></a><h3 id="3">4.对应站内人员图标</h3></h3><p><code>Ol-UserLayer.js</code><br>加载人员时，也要像加载信标那样，添加经纬度范围。通过修改查询所用到的 <code>bottomLeft</code> 和 <code>topRight</code> 即可。</p>
+<h3 id="5-信标管理-遍历所有可能性"><a href="#5-信标管理-遍历所有可能性" class="headerlink" title="5. 信标管理 (遍历所有可能性)"></a><h3 id="4">5. 信标管理 (遍历所有可能性)</h3></h3><h6 id="以下称虚拟信标为-vBc-，主信标为-mBc。"><a href="#以下称虚拟信标为-vBc-，主信标为-mBc。" class="headerlink" title="以下称虚拟信标为 vBc ，主信标为 mBc。"></a>以下称虚拟信标为 <code>vBc</code> ，主信标为 <code>mBc</code>。</h6><h4 id="5-1-信标总管理"><a href="#5-1-信标总管理" class="headerlink" title="5.1 信标总管理"></a>5.1 信标总管理</h4><p><code>ManageBeacon.js</code></p>
+<p><img src="/imgs/manageBeacon.png" alt="manageBeacon"></p>
+<center>图4 信标管理
+
+
+<h4 id="5-2-新增信标"><a href="#5-2-新增信标" class="headerlink" title="5.2 新增信标"></a>5.2 新增信标</h4><p><code>AddBeacon.js</code></p>
+<h5 id="5-2-1-新增主信标"><a href="#5-2-1-新增主信标" class="headerlink" title="5.2.1 新增主信标"></a>5.2.1 新增主信标</h5><ol>
+<li>信标状态通过滑块控制</li>
+</ol>
+<p><strong>2.</strong> <strong><em>\</em>考虑到每个站点内都有对应的可选基站ID，而不可由用户自定义输入，所以使用下拉框提供选择。**</strong></p>
+<p>其中，基站 ID 需要根据 “基站信息维护” 中的对应站点显示。</p>
+<p><img src="/imgs/addBeacon.png" alt="addBeacon"></p>
+<center>图5 新增信标
+
+<h5 id="5-2-2-新增虚拟信标"><a href="#5-2-2-新增虚拟信标" class="headerlink" title="5.2.2 新增虚拟信标"></a>5.2.2 新增虚拟信标</h5><p><code>AddVirtualBeacon.js</code></p>
+<p><img src="/imgs/addVirtualBeacon.png" alt="addVirtualBeacon"></p>
+<center>图6 新增虚拟信标
+
+<p><code>vBc</code> 相较于 <code>mBc</code>，不同的仅在 “备注” 和 “基站ID”，其余改为 <code>readonly</code></p>
+<p>只能为 <code>mBc</code> 添加 <code>vBc</code>，而当尝试为 <code>vBc</code> 添加时，则会提示错误，如下图8所示。</p>
+<p><img src="/imgs/avb_alert.png" alt="avb_alert"></p>
+<center>图7 虚拟信标新增提示</center>
+
+<h4 id="5-3-修改信标"><a href="#5-3-修改信标" class="headerlink" title="5.3 修改信标"></a>5.3 修改信标</h4><p><code>EditBeacon.js</code></p>
+<p>修改虚拟信标时，同样只有“备注” 和 “基站ID” 可修改。</p>
+<p><img src="/imgs/EditBeacon.png" alt="EditBeacon"></p>
+<center>图8 修改 (虚拟) 信标
+
+
+<p>当修改 <code>mBc</code> 时，所有 <code>vBc</code> 也同样被修改。判断条件为：<a href="#default">同经纬度的信标</a>。</p>
+<h4 id="5-4-删除信标"><a href="#5-4-删除信标" class="headerlink" title="5.4 删除信标"></a>5.4 删除信标</h4><p>选中条目后进行删除。</p>
+<p>删除逻辑为：</p>
+<p>先删除选中的所有 <code>vBc</code>，再删除 <code>mBc</code> 及其对应的所有 <code>vBc</code>。</p>
+<h3 id="6-站点配置"><a href="#6-站点配置" class="headerlink" title="6. 站点配置"></a><h3 id="5">6. 站点配置</h3></h3><ol>
+<li><p>新增：与 “信标管理” 方法一致，双击图片上的位置，输入信息与上表数据对应。</p>
+</li>
+<li><p>删除：考虑到删除中间图片(如图4中地图图2、3)，会导致下图3中黄色框中范围出现大量浪费，所以需要用算法将删除后剩余地图图片范围重新安排（将地图4放到地图2的位置）。另外，还需要删除数据库中地图2、3的人员、信标等信息。</p>
+</li>
+<li><p>修改：配置用户不能修改下图3中标志出的信息，而是通过软件计算后分配。</p>
+</li>
+</ol>
+<p><img src="/imgs/unmodified_segments.png" alt="unmodified_segments"></p>
+<center>图9 不可配置的字段</center>
+
+<p><img src="/imgs/staticImage_concpt.png" alt="staticImage_concpt"></p>
+<center>图10 室内静态图概念图</center>
+
+<h5 id="相应考虑：-（因为站点信息是与实际地铁站对应、应为固定的，所以目前不确定地铁站点是由配置用户配置完成、并不再变动，还是在使用调度平台前就在数据库中配置完成。）"><a href="#相应考虑：-（因为站点信息是与实际地铁站对应、应为固定的，所以目前不确定地铁站点是由配置用户配置完成、并不再变动，还是在使用调度平台前就在数据库中配置完成。）" class="headerlink" title="相应考虑： \（因为站点信息是与实际地铁站对应、应为固定的，所以目前不确定地铁站点是由配置用户配置完成、并不再变动，还是在使用调度平台前就在数据库中配置完成。）**"></a>相应考虑： <strong><em>\</em>（因为站点信息是与实际地铁站对应、应为固定的，所以目前不确定地铁站点是由配置用户配置完成、并不再变动，还是在使用调度平台前就在数据库中配置完成。）**</strong></h5><h1 id="计划部分"><a href="#计划部分" class="headerlink" title="计划部分"></a><u>计划部分</u></h1><h3 id="1-历史轨迹相关"><a href="#1-历史轨迹相关" class="headerlink" title="1. 历史轨迹相关 "></a><h3 id="6">1. 历史轨迹相关 </h3></h3><p>考虑到：<u><strong>人员在同一天进出多个站点的可能性</strong></u></p>
+<p>需要给用户提供所有经过的站内地图及其在内的轨迹</p>
+<h4 id="1-1-一天多站"><a href="#1-1-一天多站" class="headerlink" title="1.1 一天多站"></a>1.1 一天多站</h4><p>目前考虑的方案如下：</p>
+<p><strong><em>\</em>方案1.**</strong> 显示单站轨迹、单站records，当需要查看其它站点轨迹时，点击切换后进入相应站点，再显示其中轨迹、records。</p>
+<p>清空地图、清空 <code>records</code> 记录，加载新的。</p>
+<p>其中，查询的顺序为：<code>HistoryGIS_info.place</code> –&gt; <code>beaconId_info.BSId</code>–&gt; <code>MetroStation_info</code> 包含的 <code>BeaconBSId</code> 查到相应的地图</p>
+<p><strong><em>\</em>方案2.**</strong> 新建室内轨迹 DB</p>
+<p><strong><em>\</em>方案3.**</strong> 打开 “历史轨迹” 后，显示总站点图，其中，指定时间、指定人员经过的站点高亮 (做记号，可点击)，record显示则所有的条目。</p>
+<p>点击高亮站点后，进入相应站点，地图的刷新方式与外地图相同，record则刷新。推出方法一致。</p>
+<p><strong><em>\</em>注意：**</strong></p>
+<p>轨迹未播放完时，无法进行切换（需要alert进行提示）。</p>
+<h4 id="1-2-历史轨迹与原页面"><a href="#1-2-历史轨迹与原页面" class="headerlink" title="1.2 历史轨迹与原页面"></a>1.2 历史轨迹与原页面</h4><p>打开a历史轨迹的时候，原页面</p>
+<p>方案1. 无法返回线路图；</p>
+<p>方案2. 能返回线路图，但是不能进入其他室内地图。</p>
+<h3 id="2-调度页面"><a href="#2-调度页面" class="headerlink" title="2. 调度页面"></a><h3 id="7">2. 调度页面</h3></h3><h4 id="2-1-用户列表"><a href="#2-1-用户列表" class="headerlink" title="2.1 用户列表"></a>2.1 用户列表</h4><p>需要限定范围</p>
+<p><img src="/imgs/limitRange.png" alt="limitRange"></p>
+<center>图11 用户信息
+
+<h4 id="2-2-操作窗口"><a href="#2-2-操作窗口" class="headerlink" title="2.2 操作窗口"></a>2.2 操作窗口</h4><h4 id="2-3-立即定位、动态重组-、GPS设备漫游"><a href="#2-3-立即定位、动态重组-、GPS设备漫游" class="headerlink" title="2.3 立即定位、动态重组 (?)、GPS设备漫游"></a>2.3 立即定位、动态重组 (?)、GPS设备漫游</h4><h4 id="2-4-人员设备管理"><a href="#2-4-人员设备管理" class="headerlink" title="2.4 人员设备管理"></a>2.4 人员设备管理</h4><h4 id="2-5-基站统计"><a href="#2-5-基站统计" class="headerlink" title="2.5 基站统计"></a>2.5 基站统计</h4><p>是否需要显示每个站点对应的基站下在线数量</p>
+<p><img src="/imgs/dispatch_BSOnline.png" alt="dispatch_BSOnline"></p>
+<center>图12 基站统计
+
+<h4 id="2-6-是否需要动态重组"><a href="#2-6-是否需要动态重组" class="headerlink" title="2.6 是否需要动态重组"></a>2.6 是否需要动态重组</h4><h3 id="3-配置页面"><a href="#3-配置页面" class="headerlink" title="3. 配置页面"></a><h3 id="8">3. 配置页面</h3></h3><p>是否在 “线路图” 中，加载全部信息条目；而在相应站内图中仅加载站内对应条目？</p>
+<h4 id="3-1-单位信息维护"><a href="#3-1-单位信息维护" class="headerlink" title="3.1 单位信息维护"></a>3.1 单位信息维护</h4><p>是否与之前所述的 “站点管理” 功能一致？</p>
+<h4 id="3-2-终端信息维护、移动用户列表"><a href="#3-2-终端信息维护、移动用户列表" class="headerlink" title="3.2 终端信息维护、移动用户列表"></a>3.2 终端信息维护、移动用户列表</h4><p>是否需要和站点关联？</p>
+<h4 id="3-3-基站信息维护"><a href="#3-3-基站信息维护" class="headerlink" title="3.3 基站信息维护"></a>3.3 基站信息维护</h4><p>是否要根据站点配置 (加入站点 ID 的字段)</p>
+<p><img src="/imgs/BaseStation_info.png" alt="BaseStation_info"></p>
+<center>图13 基站信息数据表
+
+<h4 id="3-4-编组信息"><a href="#3-4-编组信息" class="headerlink" title="3.4 编组信息"></a>3.4 编组信息</h4><h1 id="存在问题"><a href="#存在问题" class="headerlink" title="存在问题"></a>存在问题</h1><p><img src="/imgs/prob1.png" alt="prob1"></p>
+<center>图14 距离测量 `svg` 问题
+
+
+
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+    
+
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Review-of-JS" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -937,95 +1145,6 @@
 
 
   
-    <article id="post-public-private" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2020/07/07/public-private/" target="_blank">public &amp; private</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2020/07/07/public-private/" class="archive-article-date">
-        <time datetime="2020-07-07T11:18:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-07</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h4 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h4><p>Public &amp; Private</p>
-<h3 id="1-DEFINITIONS"><a href="#1-DEFINITIONS" class="headerlink" title="1. DEFINITIONS"></a>1. DEFINITIONS</h3>
-    
-    <a class="article-more-a" href="/2020/07/07/public-private/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Oriented Object Programming</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next</a>
@@ -1040,7 +1159,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2018-2020 <a href="http://github.com/johannes-lin/" target="_blank">Johannes</a>
+    		&copy; 2018-2021 <a href="http://github.com/johannes-lin/" target="_blank">Johannes</a>
     	</div>
     </div>
   </div>
@@ -1146,10 +1265,6 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Front-end</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Machine Learning</a>
               </li>
              
@@ -1162,15 +1277,19 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Front-end</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Basic Algorithms</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">General Tech</a>
+                <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
+                <a href="javascript:void(0)" class="js-tag color3">General Tech</a>
               </li>
              
               <li class="article-tag-list-item">
